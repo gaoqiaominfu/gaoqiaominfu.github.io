@@ -1,0 +1,659 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="搭建FTP,教程,filezilla," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="转载于网络： 搭建windows下filezilla FTP服务器ＦＴＰ服务器必不可少，鉴于serv-u越来越冗余繁多的设置，个人还是比较喜欢简单、干净，满足需求即可的东东，所以选择filezilla。更主要的原因是ta是开元免费使用的，虽然免费，功能却齐全，我发现现在好多人也喜欢用这款软件。Filezilla的主要优势在于：高安全、高性能。Filezilla的安全性是来自于其开放源代码的。Fil">
+<meta name="keywords" content="搭建FTP,教程,filezilla">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建windows下filezillaFTP服务器">
+<meta property="og:url" content="http://yoursite.com/2015/12/25/搭建windows下filezilla FTP服务器/index.html">
+<meta property="og:site_name" content="Way-Kwok Chu&#39;s Web Blog">
+<meta property="og:description" content="转载于网络： 搭建windows下filezilla FTP服务器ＦＴＰ服务器必不可少，鉴于serv-u越来越冗余繁多的设置，个人还是比较喜欢简单、干净，满足需求即可的东东，所以选择filezilla。更主要的原因是ta是开元免费使用的，虽然免费，功能却齐全，我发现现在好多人也喜欢用这款软件。Filezilla的主要优势在于：高安全、高性能。Filezilla的安全性是来自于其开放源代码的。Fil">
+<meta property="og:image" content="http://yoursite.com/images/aa.jpg">
+<meta property="og:image" content="http://yoursite.com/images/123.jpg">
+<meta property="og:image" content="http://yoursite.com/images/bb.jpg">
+<meta property="og:image" content="http://yoursite.com/images/cc.jpg">
+<meta property="og:image" content="http://yoursite.com/images/dd.jpg">
+<meta property="og:image" content="http://yoursite.com/images/ee.jpg">
+<meta property="og:image" content="http://yoursite.com/images/ff.jpg">
+<meta property="og:image" content="http://yoursite.com/images/gg.jpg">
+<meta property="og:image" content="http://yoursite.com/images/hh.jpg">
+<meta property="og:image" content="http://yoursite.com/images/ii.jpg">
+<meta property="og:updated_time" content="2017-04-15T13:47:45.615Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搭建windows下filezillaFTP服务器">
+<meta name="twitter:description" content="转载于网络： 搭建windows下filezilla FTP服务器ＦＴＰ服务器必不可少，鉴于serv-u越来越冗余繁多的设置，个人还是比较喜欢简单、干净，满足需求即可的东东，所以选择filezilla。更主要的原因是ta是开元免费使用的，虽然免费，功能却齐全，我发现现在好多人也喜欢用这款软件。Filezilla的主要优势在于：高安全、高性能。Filezilla的安全性是来自于其开放源代码的。Fil">
+<meta name="twitter:image" content="http://yoursite.com/images/aa.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> 搭建windows下filezillaFTP服务器 | Way-Kwok Chu's Web Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Way-Kwok Chu's Web Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">超人的博客|我的随想录</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                搭建windows下filezillaFTP服务器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-25T17:05:46+08:00" content="2015-12-25">
+              2015-12-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>转载于网络：</p>
+<p>搭建windows下filezilla FTP服务器<br>ＦＴＰ服务器必不可少，鉴于serv-u越来越冗余繁多的设置，个人还是比较喜欢简单、干净，满足需求即可的东东，所以选择filezilla。更主要的原因是ta是开元免费使用的，虽然免费，功能却齐全，我发现现在好多人也喜欢用这款软件。<br>Filezilla的主要优势在于：高安全、高性能。Filezilla的安全性是来自于其开放源代码的。Filezilla的高性能来自于其代码的开发平台是C/C++，自身基础就好于其他VB/Dephi平台开发的应用程序，因此Filezilla具有可媲美IIS的性能。在千兆网络带宽上，可轻松满足数百用户同时高速下载。目前Filezilla也存在一些不足，主要缺点就是不支持配额，即本身不提供上传、下载总文件大小配额的功能。<br>Filezilla主要分服务器端和客户端，参考下载：<br>Server端:<br><a href="https://filezilla-project.org/download.php?type=server" target="_blank" rel="external">https://filezilla-project.org/download.php?type=server</a><br>Client端：<br><a href="https://filezilla-project.org/download.php" target="_blank" rel="external">https://filezilla-project.org/download.php</a><br>1、软件的安装：<br>Windows下傻瓜式的一键next就可以了，我这里实验在同一台服务器上同时安装了server端和client端；<br>安装server的时候默认的管理端口是14147，可以自行修改，服务器的监听端口为默认的ftp的21端口。<br><img src="/images/aa.jpg" alt="aa"><br>2、启动程序<br>安装完成后在程序里找到filezilla启动即可,也可以暂停、卸载，在管理工具中的服务设置启动类型：<br><img src="/images/123.jpg" alt="123"><img src="/images/bb.jpg" alt="bb"><br>安装完server端本地登陆后的界面如下：<br><img src="/images/cc.jpg" alt="cc"><br>鼠标指到工具栏上，在左下角会有选项提示信息，从左到右依次为：<br>1：选中表示服务online, 未选择表示服务offline，offline就断开所有客户端的连接<br>2：表示锁定服务，新的客户端请求将被拒绝（返回码421 Server is locked.）<br>3：服务器基本参数设置，可以设置ip过滤，上传下载速度等；<br>4：用户管理；<br>5：用户组管理；<br>6：帮助（About）,服务器的版本以及相关信息<br>7：两个图标’/C/‘和’C:\’切换目录表示方式<br>8：客户端的连接信息排序方式<br>其中服务器基本参数设置如下图，根据相关提示设置即可：<br><img src="/images/dd.jpg" alt="dd"><br>3、用户组和用户的管理<br>用户组：<br><img src="/images/ee.jpg" alt="ee"><br>创建一个xjx的组，右边可以对组进行添加、删除、重命名等操作，可以设置最大连接数和每个ip的链接限制；shared folders（共享文件目录）可以设置组的共享文件目录，speed limits可以对组进行相关限速；<br>用户：<br><img src="/images/ff.jpg" alt="ff"><br>添加用户xjx，用于以后的登陆，设置密码，等操作，新添加的用户必须设置主目录，并可设置相关目录权限<br><img src="/images/gg.jpg" alt="gg"><br>4、客户端的链接：<br>在主机处输入服务器的ip地址，用户名、密码等信息，端口为默认的ftp的21端口，也可以不写；这里我输入我服务器地址，或者我因为在本机上同时安装的服务端和客户端，我在主机输入127.0.0.1也可，用我刚刚创建的用户来登陆；<br><img src="/images/hh.jpg" alt="hh"><br>登陆成功后，在服务器端会生成相应的日志，客户端的操作也同样有记录，下方会显示当前登陆的用户；<br><img src="/images/ii.jpg" alt="ii"><br>登陆上之后就可以进行相关的文件操作了。至此一个简单而方便的ftp服务器全部搭建完成。<br>5、总结<br>啰嗦了这么多，其实就是一个很简单的ftp服务器，服务端安装好server之后，客户端通过client来访问。基本参照提示信息就能一目了然的知道各选项的具体含义。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/搭建FTP/" rel="tag">#搭建FTP</a>
+          
+            <a href="/tags/教程/" rel="tag">#教程</a>
+          
+            <a href="/tags/filezilla/" rel="tag">#filezilla</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/22/日亚直邮买了本监狱学园19/" rel="next" title="日亚直邮买了本监狱学园19">
+                <i class="fa fa-chevron-left"></i> 日亚直邮买了本监狱学园19
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/25/搭建windows下filezillaFTP服务器/" rel="prev" title="搭建windows下filezillaFTP服务器">
+                搭建windows下filezillaFTP服务器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+ <!-- 多说评论框 start -->  
+        <div class="ds-thread" data-thread-key="<%- page.path %>" data-title="<%- page.title %>" data-url="<%- page.permalink %>"></div>  
+<!-- 多说评论框 end -->  
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gaoqiaominfu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="、Superman" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">、Superman</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">、Superman</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

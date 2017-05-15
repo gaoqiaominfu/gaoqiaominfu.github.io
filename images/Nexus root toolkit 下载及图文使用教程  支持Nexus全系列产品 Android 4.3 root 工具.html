@@ -1,0 +1,386 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="转载于网络： Nexus 系列手机及平板产品的解锁、反解锁、ROOT等功能的实现非 Nexus root toolkit 莫属，它是Nexus系列产品的专属软件。最新版本的Nexus root toolkit 1.7.3 支持对Nexus4 / Nexus7 等最新系统 Andriod 4.3 的 root /解锁、刷机、备份、安装ADB驱动、刷recovery等操作，并且成功率最高。 使用 Ne">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nexusroottoolkit下载及图文使用教程支持Nexus全系列产品Android4.3root工具">
+<meta property="og:url" content="http://yoursite.com/images/Nexus root toolkit 下载及图文使用教程  支持Nexus全系列产品 Android 4.3 root 工具.html">
+<meta property="og:site_name" content="Way-Kwok Chu&#39;s Web Blog">
+<meta property="og:description" content="转载于网络： Nexus 系列手机及平板产品的解锁、反解锁、ROOT等功能的实现非 Nexus root toolkit 莫属，它是Nexus系列产品的专属软件。最新版本的Nexus root toolkit 1.7.3 支持对Nexus4 / Nexus7 等最新系统 Andriod 4.3 的 root /解锁、刷机、备份、安装ADB驱动、刷recovery等操作，并且成功率最高。 使用 Ne">
+<meta property="og:image" content="http://yoursite.com/images/a.jpg">
+<meta property="og:image" content="http://yoursite.com/images/b.jpg">
+<meta property="og:image" content="http://yoursite.com/images/c.jpg">
+<meta property="og:image" content="http://yoursite.com/images/d.jpg">
+<meta property="og:image" content="http://yoursite.com/images/e.jpg">
+<meta property="og:image" content="http://yoursite.com/images/f.jpg">
+<meta property="og:updated_time" content="2017-04-15T13:26:52.798Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nexusroottoolkit下载及图文使用教程支持Nexus全系列产品Android4.3root工具">
+<meta name="twitter:description" content="转载于网络： Nexus 系列手机及平板产品的解锁、反解锁、ROOT等功能的实现非 Nexus root toolkit 莫属，它是Nexus系列产品的专属软件。最新版本的Nexus root toolkit 1.7.3 支持对Nexus4 / Nexus7 等最新系统 Andriod 4.3 的 root /解锁、刷机、备份、安装ADB驱动、刷recovery等操作，并且成功率最高。 使用 Ne">
+<meta name="twitter:image" content="http://yoursite.com/images/a.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title>
+  
+
+  
+    Nexusroottoolkit下载及图文使用教程支持Nexus全系列产品Android4.3root工具 | Way-Kwok Chu's Web Blog
+  
+</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Way-Kwok Chu's Web Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">超人的博客|我的随想录</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+    
+      <p>转载于网络：</p>
+<p>Nexus 系列手机及平板产品的解锁、反解锁、ROOT等功能的实现非 Nexus root toolkit 莫属，它是Nexus系列产品的专属软件。最新版本的Nexus root toolkit 1.7.3 支持对Nexus4 / Nexus7 等最新系统 Andriod 4.3 的 root /解锁、刷机、备份、安装ADB驱动、刷recovery等操作，并且成功率最高。</p>
+<p>使用 Nexus root toolkit 1.7.3 进行 Andrioid 4.3 root 图文教程：<br>Nexus root toolkit 安装完毕后，会弹出如下图所示的对话框，意即如何开启Nexus设备的USB调试；如果你已开启USB调试，点击确定即可，如果没有，而且不知道如何开启请按提示操作，或参考《Google Nexus 4 常见问题解决方案汇总》中的第一项。<br><img src="/images/a.jpg" alt="a"><br>一、选择设备：<br>成功安装Nexus root toolkit后，分两步选择你的设备型号，以安装了Android 4.3 的Nexus4为例：在上面的选项中选择Nexus4（LG E960）;选择Nexus4的具体版本号，此版本号信息可以在手机的设备-关于手机-版本号中找到；选择后点击右下角的Apply按钮即可。<br><img src="/images/b.jpg" alt="b"><br>二、安装驱动：<br>点击下图即图1中的1处，打开“Full Driver Configuration Guide”的驱动安装界面。<br><img src="/images/c.jpg" alt="c"><br>未安装驱动的用户直接点击“Full Driver Configuration Guide”界面中”Step2″，如下图所示，按软件界面中推荐的驱动解决方案#1(你的有可能是另外三个)，点击“Driver Solution #1”下面的“Universa Drivers”按钮安装驱动。<br><img src="/images/d.jpg" alt="d"><br>驱动安装完成后，为了验证驱动是否可用，先将手机打开USB调试，连接至电脑，然后进入“Step3”，点击“Full Driver Test”进行驱动验证。如果驱动验证成功会自动重启你的手机（过程中千万不要断开手机连接！）并显示驱动验证成功对话框。<br><img src="/images/e.jpg" alt="e"><br><img src="/images/f.jpg" alt="f"><br>如果驱动没有验证成功。动手能力差的同学可以通过安装腾讯手机管家2.0（点击下载）并与手机连接来解决驱动安装问题。</p>
+<p>三、Root 手机：<br>请备份你的数据！再进行以下操作！Root之前，需要点击图1中2处的“Unlock”进行解锁，解锁操作会清空手机内所有数据！在解锁完成后，回到Nexus root toolkit用户界面（如图1），点击3处的 Root 按提示进行操作即可！如果在Root过程中提示需要下载对应的Root文件和Recoveryy,请允许下载。</p>
+<p>四、Nexus root toolkit 1.7.3 的更多功能：<br>你在完成前三个步骤后，手机ROOT已完成。而Nexus root toolkit 1.6.6的功能远远不止这些，它还支持刷入刷入Recovery；Nexus4 /Nexus7 等刷回官方ROM并进行反Root等操作，有兴趣的朋友可以自行试之。</p>
+<p>重要链接：<a href="http://wiki.cyanogenmod.org/w/Gapps" target="_blank" rel="external">http://wiki.cyanogenmod.org/w/Gapps</a> <a href="http://download.cyanogenmod.org/?device=mako" target="_blank" rel="external">http://download.cyanogenmod.org/?device=mako</a> <a href="http://www.wugfresh.com/nrt/" target="_blank" rel="external">http://www.wugfresh.com/nrt/</a></p>
+<ol>
+<li>可以刷机！不解释，就是刷机！</li>
+<li>快速备份、还原系统。</li>
+<li>升级，刷第三方更加强大的固件，增强手机的原有功能<br>recovery中文是恢复的意思，就是一个刷机的工程界面，在这个界面你可以直接用sd卡上的zip格式rom升级系统或备份系统。<br>Recovery中常见英文的意思：（粗体部分就是常说的双wipe、3wipe、4wipe）<br>-Reboot system now————重启<br>-Wipe Data/Factory reset————清除内存数据和缓存数据<br>-Wipe Cache Partition————清除cache分区内数据<br>-Wipe Dalvik Cache————清空虚拟机缓存（可以解决一些程序FC问题）<br>-Wipe Battery Stats————清空电池调试记录数据<br>-install zip from sdcard————刷入sd卡中的.zip刷机包<br>-install zip from adbsideload————通过adb sideload 模式从电脑端刷.zip 包<br>-apply update from sdcard ————安装sd卡上的升级包<br>-Backup/Restore————备份和还原系统（相当于电脑的ghost一键备份、还原）<br>-backup ————备份系统<br>-restore ————还原系统<br>-advanced restore ————高级还原，一般用不到<br>-mounts and storage ————挂载存储选项，通常用作U盘<br>-advance ————高级功能<br>-set permissions————修复Root权限（出现异常的时候可以修复权限）<br>-power off ————关机</li>
+</ol>
+
+    
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+ <!-- 多说评论框 start -->  
+        <div class="ds-thread" data-thread-key="<%- page.path %>" data-title="<%- page.title %>" data-url="<%- page.permalink %>"></div>  
+<!-- 多说评论框 end -->  
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gaoqiaominfu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="、Superman" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">、Superman</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">52</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">、Superman</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
