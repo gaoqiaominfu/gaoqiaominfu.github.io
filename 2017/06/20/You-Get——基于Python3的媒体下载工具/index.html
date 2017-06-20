@@ -1,0 +1,690 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="You-Get是一个基于 Python 3 的下载工具。使用 You-Get 可以很轻松的下载到网络上的视频、图片及音乐。 项目主页：https://github.com/soimort/you-getYou-Get 主页：https://you-get.org/You-Get 原版中文说明：https://github.com/soimort/you-get/wiki/中文说明/作者：soimo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="You-Get——基于Python3的媒体下载工具">
+<meta property="og:url" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/index.html">
+<meta property="og:site_name" content="Way-Kwok Chu&#39;s Web Blog">
+<meta property="og:description" content="You-Get是一个基于 Python 3 的下载工具。使用 You-Get 可以很轻松的下载到网络上的视频、图片及音乐。 项目主页：https://github.com/soimort/you-getYou-Get 主页：https://you-get.org/You-Get 原版中文说明：https://github.com/soimort/you-get/wiki/中文说明/作者：soimo">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/1.gif">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/2.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/3.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/4.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/5.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/6.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/7.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/8.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/9.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/10.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/11.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/12.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/13.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/14.gif">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/15.png">
+<meta property="og:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/16.png">
+<meta property="og:updated_time" content="2017-06-20T11:25:50.987Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="You-Get——基于Python3的媒体下载工具">
+<meta name="twitter:description" content="You-Get是一个基于 Python 3 的下载工具。使用 You-Get 可以很轻松的下载到网络上的视频、图片及音乐。 项目主页：https://github.com/soimort/you-getYou-Get 主页：https://you-get.org/You-Get 原版中文说明：https://github.com/soimort/you-get/wiki/中文说明/作者：soimo">
+<meta name="twitter:image" content="http://yoursite.com/2017/06/20/You-Get——基于Python3的媒体下载工具/1.gif">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> You-Get——基于Python3的媒体下载工具 | Way-Kwok Chu's Web Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Way-Kwok Chu's Web Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">超人的博客|我的随想录</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                You-Get——基于Python3的媒体下载工具
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2017-06-20T19:04:52+08:00" content="2017-06-20">
+              2017-06-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>You-Get是一个基于 Python 3 的下载工具。使用 You-Get 可以很轻松的下载到网络上的视频、图片及音乐。</p>
+<p>项目主页：<a href="https://github.com/soimort/you-get" target="_blank" rel="external">https://github.com/soimort/you-get</a><br>You-Get 主页：<a href="https://you-get.org/" target="_blank" rel="external">https://you-get.org/</a><br>You-Get 原版中文说明：<a href="https://github.com/soimort/you-get/wiki/中文说明/" target="_blank" rel="external">https://github.com/soimort/you-get/wiki/中文说明/</a><br>作者：soimort<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/1.gif" alt="1"><br>You-Get</p>
+<p>Python 是一款跨平台编程语言，Liunx 以及 Mac OS 下都可以使用，此处展示仅使用 Windows。</p>
+<p>0x01 使用 You-Get 下载视频</p>
+<p>Step1 下载与安装 Python 3</p>
+<p>1.访问 Python 官方网站下载对应版本的Python，You-Get基于Python 3，建议下载 Python 3.5.1。<br>2.安装 Python 3.5.1，注意勾选Add Python 3.5 to PATH<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/2.png" alt="1"><br>勾选</p>
+<p>3.按Win+R键打开运行，输入cmd，再输入python并回车执行，如果出现如下界面，则代表安装成功。<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/3.png" alt="1"><br>安装成功</p>
+<p>Step2 安装You-Get</p>
+<p>1.打开cmd，输入命令并执行</p>
+<p>pip3 install you-get<br>2.输入命令，检测 You-Get 是否安装成功</p>
+<p>you-get<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/4.png" alt="1"><br>you-get安装成功<br>Step3 开始下载吧</p>
+<p>打开cmd输入命令</p>
+<p>you-get [视频地址]<br>e.g.下载一段美拍视频<br>输入如下命令</p>
+<p>you-get <a href="http://www.meipai.com/media/454570774" target="_blank" rel="external">http://www.meipai.com/media/454570774</a><br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/5.png" alt="1"><br>点击左上角可以快速粘贴<br>文件保存在C:\Users\用户名目录下，如果想自定义保存位置，使用如下命令即可</p>
+<p>e.g.下载一段美拍视频并保存在E:\Desktop</p>
+<p>you-get -o E:/Desktop <a href="http://www.meipai.com/media/454570774" target="_blank" rel="external">http://www.meipai.com/media/454570774</a><br>0x02 You-Get 有关视频的其他用法</p>
+<p>You-Get仅用来下载视频显得有些大材小用了，作者也给出了You-Get的一些其他用法，这里着重介绍几个。</p>
+<p>1.选择视频下载格式和清晰度</p>
+<p>通常网页视频的格式为.flv，但部分网站会提供好几种视频格式，我们可以使用 You-Get 下载这些视频。</p>
+<p>e.g.下载一段优酷视频<br>1.查看当前视频的清晰度和格式</p>
+<p>you-get -i <a href="http://v.youku.com/v_show/id_XMTQ2NzQyMjY1Ng.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XMTQ2NzQyMjY1Ng.html</a><br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/6.png" alt="1"></p>
+<p>视频提供三种格式，三种清晰度<br>2.选择需要下载的清晰度及格式</p>
+<p>you-get –format=hd2 <a href="http://v.youku.com/v_show/id_XMTQ2NzQyMjY1Ng.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XMTQ2NzQyMjY1Ng.html</a></p>
+<p><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/7.png" alt="1"><br>下载成功<br>2.在本地播放器中播放流媒体视频</p>
+<p>Flash 因CPU占用高被嗤之以鼻，而 You-Get 可以直接在本地播放器中播放网页视频。类似功能的还有 Livestreamer 这个神奇的工具。</p>
+<p>e.g.在 PotPlayer 中播放一段下面这段爱奇艺视频<br>(视频链接：<a href="http://www.iqiyi.com/v_19rrgzy5ls.html" target="_blank" rel="external">http://www.iqiyi.com/v_19rrgzy5ls.html</a>)</p>
+<p>1.在资源管理器中打开 PotPlayer 安装目录<br>2.按住Shift并右击鼠标，选择在此处打开命令窗口<br>3.输入下面的 You-Get 播放命令即可</p>
+<p>you-get -p PotPlayerMini64.exe <a href="http://v.youku.com/v_show/id_XMTY0MTA4ODM1Mg==.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XMTY0MTA4ODM1Mg==.html</a><br>(注意 PotPalyer 可执行文件的文件名的大小写，大小写错误将会导致 you-get 报错，如果 Potplayer 播放失败请尝试使用 VLC 进行播放)<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/8.png" alt="1"><br>播放成功<br>3.暂停下载与继续下载</p>
+<p>1.暂停下载：和Linux一样，按Ctrl+C可以中断命令，下载目录下会保存有一个以.download为扩展名的缓存文件。</p>
+<p>2.继续下载：重新执行下载任务，如果下载目录下有上次下载保存的缓存文件，则继续上次下载进度。</p>
+<p>3.强制重新下载（即使下载完成也会重新写入）：</p>
+<p>you-get -f <a href="http://www.meipai.com/media/437971164" target="_blank" rel="external">http://www.meipai.com/media/437971164</a><br>4.下载视频列表中的所有视频</p>
+<p>优酷等网站会提供视频列表，而 You-Get 可以通过视频列表进行批量下载。</p>
+<p>e.g.下载一个优酷视频专辑</p>
+<p>you-get <a href="http://www.youku.com/playlist_show/id_25917721.html" target="_blank" rel="external">http://www.youku.com/playlist_show/id_25917721.html</a><br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/9.png" alt="1"><br>下载成功<br>5.下载Bilibili视频的弹幕</p>
+<p>看Bilibili没有弹幕简直失去了人生一大乐趣，You-Get同样提供了弹幕下载功能。</p>
+<p>1.输入命令下载 Bilibili 视频<br>2.下载完成后会自动下载.xml格式的弹幕<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/10.png" alt="1"><br>Bilibili视频及弹幕下载</p>
+<p>3.使用 Danmu2Ass 将.xml格式转换为.ass格式<br>4.打开播放器，将.ass文件加载即可<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/11.png" alt="1"><br>PotPlayer中加载弹幕<br>0x03 You-Get 下载图片</p>
+<p>You-Get 不但支持视频下载，同样支持图片下载，支持的站点已在其主页列出，部分网站支持批量下载。<br>1.访问网站<br>2.点击图片/帖子，进入图片/帖子详情<br>3.复制地址到 You-Get 下载即可</p>
+<p>截图中展现了一些例子</p>
+<p><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/12.png" alt="1"><br>Twitter<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/13.png" alt="1"><br>imgur<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/14.gif" alt="1"><br>Flickr<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/15.png" alt="1"><br>Pinterest<br>0x04 其他的一些</p>
+<p>1.使用 You-Get 建议先安装FFmpeg或 Libav<br>4.部分网站在中国大陆可能无法访问，如果想正常访问这些网站，可以去问问神奇海螺。<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/16.png" alt="1"><br>神奇海螺</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/30/JFK遇刺/" rel="next" title="JFK遇刺">
+                <i class="fa fa-chevron-left"></i> JFK遇刺
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+ <!-- 多说评论框 start -->  
+        <div class="ds-thread" data-thread-key="<%- page.path %>" data-title="<%- page.title %>" data-url="<%- page.permalink %>"></div>  
+<!-- 多说评论框 end -->  
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gaoqiaominfu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="、Superman" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">、Superman</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">55</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">、Superman</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
