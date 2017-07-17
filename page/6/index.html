@@ -184,6 +184,92 @@
 
     
     
+      
+      
+
+      
+    
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/07/github教程1/" itemprop="url">
+                  github教程1
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-07T14:54:52+08:00" content="2015-12-07">
+              2015-12-07
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>教程【一】<br>一、注册一个免费git帐号，可以无限建立访问权限为公共的版本仓库，注册地址：<a href="https://github.com/signup/free" target="_blank" rel="external">https://github.com/signup/free</a><br>二、依次填写，用户名【昵称】、邮箱地址【用来登录】、密码，点击“creat an account”进行注册<br>三、点击右上方的”sign in”使用注册邮箱登录到git<br>四、点击右上方，你的用户名之后的图标，新建一个版本仓库<br>五、在“Repository name”一栏里填写版本仓库的名称，我们假设为”test”,Description栏是描述，可填可不填。<br>默认访问权限为公共，我们点击”Creating Repository”按钮，创建我们的第一个版本仓库。<br>接下来，我们需要在本地安装git客户端。<br>六、以windows为例，下载客户端：<a href="http://github-windows.s3.amazonaws.com/GitHubSetup.exe，安装完成后，会在桌面上出现两个图标，Git" target="_blank" rel="external">http://github-windows.s3.amazonaws.com/GitHubSetup.exe，安装完成后，会在桌面上出现两个图标，Git</a> Shell和GitHub。<br>七、那两个图标分别是命令行工具和图形界面，我们先来学习使用shell。<br>八、双击打开Git Shell,【win7用户使用管理员权限打开】<br>九、输入git config –global user.name “d1php”,这里的d1php是站长注册的用户名，你得改成你自己的<br>十、输入git config –global user.email “studyphp@yahoo.cn”,这里的邮箱也是是站长注册的邮箱，你得改成你自己的<br>十一、上面两步在客户端配置你的git帐户，下面我们在本地建立自己的版本仓库，站长把版本仓库建立在D盘。输入cd d:，切换到D盘目录。<br>十二、输入mkdir test，建立一个test目录，注意本地仓库名要和git中建立的仓库名一样<br>十三、输入cd test，进入test目录<br>十四、输入git init,初始化版本仓库<br>十五、输入touch README,建立一个README文件<br>十六、用文本编辑器打开README文件，随便输入一点文件，比如：this is a test!<br>十七、输入git add README,将文件添加到上传队列<br>十八、输入git commit -m ‘test commit’，缓存提交，引号中的是对本次提交的描述，必须填写，不能为空<br>十九、输入git remote add origin <a href="https://github.com/d1php/test.git,注意url格式，d1php是你注册时的昵称，test是你刚才建立的版本仓库" target="_blank" rel="external">https://github.com/d1php/test.git,注意url格式，d1php是你注册时的昵称，test是你刚才建立的版本仓库</a><br>二十、输入git push origin master，将README文件上传到版本库。这一步会一次让你填写你的git注册邮箱和密码，注意不要填错了<br>好了，到这一步，我们就完成了在线上和线下建立git版本库并上传文件的全部步骤。下节课我们来学习GitHub的使用，图形界面大家肯定更容易接受。</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -721,7 +807,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">56</span>
+              <span class="site-state-item-count">57</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
