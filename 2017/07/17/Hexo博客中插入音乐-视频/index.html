@@ -51,16 +51,18 @@
 
 
 
-<meta name="description" content="new APlayer({ 				element: document.getElementById(&quot;aplayer0&quot;), 				narrow: false, 				autoplay: false, 				showlrc: 0, 				music: { 					title: &quot;佚名&quot;, 					author: &quot;佚名&quot;, 					url: &quot;http://ot8">
+<meta name="description" content="感谢原作者：http://login926.github.io/2016/07/20/HexoMedia/ 我只是搬来学习的博客中插入音乐/视频，可以让博客的逼格瞬间提高。作为优秀的静态博客，Hexo 当然也少不了这些高大上的功能。Markdown 通用音乐/视频插入方法Markdown 作为轻量级的标记语言，兼容 html 语法，所以可以直接在 Markdown 文档中使用 html 语法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客中插入音乐&#x2F;视频">
 <meta property="og:url" content="http://yoursite.com/2017/07/17/Hexo博客中插入音乐-视频/index.html">
 <meta property="og:site_name" content="Way-Kwok Chu&#39;s Web Blog">
-<meta property="og:description" content="new APlayer({ 				element: document.getElementById(&quot;aplayer0&quot;), 				narrow: false, 				autoplay: false, 				showlrc: 0, 				music: { 					title: &quot;佚名&quot;, 					author: &quot;佚名&quot;, 					url: &quot;http://ot8">
-<meta property="og:updated_time" content="2017-07-19T09:35:52.334Z">
+<meta property="og:description" content="感谢原作者：http://login926.github.io/2016/07/20/HexoMedia/ 我只是搬来学习的博客中插入音乐/视频，可以让博客的逼格瞬间提高。作为优秀的静态博客，Hexo 当然也少不了这些高大上的功能。Markdown 通用音乐/视频插入方法Markdown 作为轻量级的标记语言，兼容 html 语法，所以可以直接在 Markdown 文档中使用 html 语法。">
+<meta property="og:image" content="http://yoursite.com/2017/07/17/Hexo博客中插入音乐-视频/Gitshell中安装.png">
+<meta property="og:updated_time" content="2017-07-19T09:58:11.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客中插入音乐&#x2F;视频">
-<meta name="twitter:description" content="new APlayer({ 				element: document.getElementById(&quot;aplayer0&quot;), 				narrow: false, 				autoplay: false, 				showlrc: 0, 				music: { 					title: &quot;佚名&quot;, 					author: &quot;佚名&quot;, 					url: &quot;http://ot8">
+<meta name="twitter:description" content="感谢原作者：http://login926.github.io/2016/07/20/HexoMedia/ 我只是搬来学习的博客中插入音乐/视频，可以让博客的逼格瞬间提高。作为优秀的静态博客，Hexo 当然也少不了这些高大上的功能。Markdown 通用音乐/视频插入方法Markdown 作为轻量级的标记语言，兼容 html 语法，所以可以直接在 Markdown 文档中使用 html 语法。">
+<meta name="twitter:image" content="http://yoursite.com/2017/07/17/Hexo博客中插入音乐-视频/Gitshell中安装.png">
 
 
 
@@ -235,10 +237,46 @@
       
 
       
-        <span itemprop="articleBody"><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><div id="aplayer0" class="aplayer" style="margin-bottom: 20px;"></div>
+        <span itemprop="articleBody"><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>感谢原作者：<a href="http://login926.github.io/2016/07/20/HexoMedia/" target="_blank" rel="external">http://login926.github.io/2016/07/20/HexoMedia/</a> 我只是搬来学习的<br>博客中插入音乐/视频，可以让博客的逼格瞬间提高。作为优秀的静态博客，Hexo 当然也少不了这些高大上的功能。<br>Markdown 通用音乐/视频插入方法<br>Markdown 作为轻量级的标记语言，兼容 html 语法，所以可以直接在 Markdown 文档中使用 html 语法。</p>
+<p>vedio标签举例：<br>1<br>2<br>3</p>
+<p><video width="480" height="320" controls></video></p>
+<p><source src="movie.mp4"><br><br>其中src=后面的值需要替换为自己的音乐/视频链接。</p>
+<p>效果：</p>
+<p><video width="480" height="320" controls></video></p>
+<p><source src="http://ot86eu355.bkt.clouddn.com/Free-Converter.com-20170717014822-7560327653.mp4"><br><br>embed标签举例：<br>1</p>
+<p><embed src="http://player.youku.com/player.php/Type/Folder/Fid/27690810/Ob/1/sid/XMTY1MTI3NjMyNA==/v.swf" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" allowfullscreen="true" mode="transparent" type="application/x-shockwave-flash"><br>iframe标签举例：<br>1</p>
+<p><iframe height="498" width="510" src="http://player.youku.com/embed/XMTY1MTI3NjMyNA==" frameborder="0" allowfullscreen></iframe><br>javascript标签举例<br>1</p>
+<p><script type="text/javascript" src="http://www.xiami.com/widget/player-single?uid=32329501&sid=1776238762&mode=js"></script><br>除vedio标签外，大部分音乐/视频网站都可以直接生成播放器代码，直接粘贴到 Markdown 文档中即可。<br>不过上述有些标签不支持 https 。<br>通过 Hexo 插件插入音乐/视频<br>这里需要使用两个播放器插件</p>
+<p>hexo-tag-aplayer:<a href="https://github.com/grzhan/hexo-tag-aplayer#upstream-issue" target="_blank" rel="external">https://github.com/grzhan/hexo-tag-aplayer#upstream-issue</a></p>
+<p>hexo-tag-dplayer:<a href="https://github.com/NextMoe/hexo-tag-dplayer" target="_blank" rel="external">https://github.com/NextMoe/hexo-tag-dplayer</a><br>两款插件基于 DIYgod 编写的 html5 播放器 APlayer 和 DPlayer 开发。</p>
+<p>首先安装两款插件</p>
+<p>打开 Git Shell，切换到 Hexo 目录下，运行如下两条命令</p>
+<p>1<br>2<br>3<br>npm install hexo-tag-dplayer –save<br>npm install hexo-tag-aplayer –save</p>
+<p><img src="/2017/07/17/Hexo博客中插入音乐-视频/Gitshell中安装.png" alt="1"></p>
+<p>安装到最后 npm 可能会报错，忽视即可。</p>
+<p>安装成功后，在 Markdown 文档中添加 APlayer 和 DPlayer 标签即可</p>
+<p>比如添加如下代码使用 APlayer 和 DPlayer：</p>
+<p>1<br>2<br>3<br><div id="aplayer0" class="aplayer" style="margin-bottom: 20px;"></div>
 		<script>
 			new APlayer({
 				element: document.getElementById("aplayer0"),
+				narrow: false,
+				autoplay: true,
+				showlrc: 0,
+				music: {
+					title: "Caffeine",
+					author: "Jeff Williams",
+					url: "http://7xq131.com1.z0.glb.clouddn.com/Preparation.mp3",
+					pic: "",
+				}
+			});
+		</script><br><div id="dplayer0" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer0 = new DPlayer({"element":document.getElementById("dplayer0"),"autoplay":false,"theme":"#FADFA3","loop":true,"video":{"url":"http://devtest.qiniudn.com/若能绽放光芒.mp4","pic":"http://devtest.qiniudn.com/若能绽放光芒.png"},"danmaku":{"api":"http://dplayer.daoapp.io","id":"9E2E3368B56CDBB4","token":"tokendemo"}});</script><br>添加 APlayer 和 DPlayer 标签</p>
+<p>APlayer 和 DPlayer 具体参数设置可以参考 Github 项目主页，不过默认参数足够用了。</p>
+<p>最终效果：</p>
+<div id="aplayer1" class="aplayer" style="margin-bottom: 20px;"></div>
+		<script>
+			new APlayer({
+				element: document.getElementById("aplayer1"),
 				narrow: false,
 				autoplay: false,
 				showlrc: 0,
@@ -250,7 +288,10 @@
 				}
 			});
 		</script>
-<div id="dplayer0" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer0 = new DPlayer({"element":document.getElementById("dplayer0"),"autoplay":false,"theme":"#FADFA3","loop":true,"video":{"url":"http://ot86eu355.bkt.clouddn.com/Free-Converter.com-20170717014822-7560327653.mp4","pic":"http://ot86eu355.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170717150546.png"},"danmaku":{"api":"http://dplayer.daoapp.io","id":"9E2E3368B56CDBB4","token":"tokendemo"}});</script></span>
+<div id="dplayer1" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer1 = new DPlayer({"element":document.getElementById("dplayer1"),"autoplay":false,"theme":"#FADFA3","loop":true,"video":{"url":"http://ot86eu355.bkt.clouddn.com/Free-Converter.com-20170717014822-7560327653.mp4","pic":"http://ot86eu355.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20170717150546.png"},"danmaku":{"api":"http://dplayer.daoapp.io","id":"9E2E3368B56CDBB4","token":"tokendemo"}});</script>
+<p>APlayer 与 DPlayer 均支持https。</p>
+<p>上述两种方法各有优缺点，选择一种适合自己的方法，打造属于自己的个性 Hexo 博客吧。</p>
+</span>
       
     </div>
 
