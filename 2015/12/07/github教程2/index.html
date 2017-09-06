@@ -235,7 +235,7 @@
       
 
       
-        <span itemprop="articleBody"><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>–安装</p>
+        <span itemprop="articleBody"><script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>–安装</p>
 <p>Git是一个分布式版本控制工具，Linux系统下可以使用如下命令安装（这里是树莓派的Raspbian系统）：<br>sudo apt-get install git-core<br>如果是Windows系统， 点这里下载Git的安装包，安装完成后打开Git Bash；<br>–基本用法<br>使用如下命令配置你的身份，以后提交的时候Git就知道是谁在提交了：<br>git config –global user.name “xxx”<br>git config –global user.email “xxx@xx.com”<br>如果要查看配置是否成功只需把命令最后引号部分内容去掉后执行即可；<br>接下来就可以创建代码仓库了，首先你需要一个项目的文件夹，使用cd命令进入这个目录，使用如下命令创建代码仓库：<br>git init<br>命令执行后会在项目文件夹里生成一个隐藏的.git文件夹用于记录所有的Git操作，可以使用ls -al命令查看；<br>如果要删除这个仓库，只需删除这个.git文件夹即可；<br>创建仓库后就可以提交代码了，使用add命令添加然后使用commit命令提交：</p>
 <h1 id="添加test-txt文件"><a href="#添加test-txt文件" class="headerlink" title="添加test.txt文件"></a>添加test.txt文件</h1><p>git add test.txt</p>
 <h1 id="添加test目录"><a href="#添加test目录" class="headerlink" title="添加test目录"></a>添加test目录</h1><p>git add test</p>
