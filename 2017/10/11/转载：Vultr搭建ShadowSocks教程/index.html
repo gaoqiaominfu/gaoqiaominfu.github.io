@@ -1,0 +1,738 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="摘要: 搭建ss过程，安装bbr加速使用Vultr搭建ShadowSocks教程 本文原创来自：http://www.jianshu.com/p/4bf38b9d5d78 实现原理 本地发起连接请求，由远程服务器响应后然后将我们需要的数据返回到本地。 最低消费   2.5美元/月 网速自测 经过我个人测试后选择的Dallas节点，浏览youtube视频，网速能达到1MB/s，玩美服lol的延迟">
+<meta property="og:type" content="article">
+<meta property="og:title" content="转载：Vultr搭建ShadowSocks教程">
+<meta property="og:url" content="http://yoursite.com/2017/10/11/转载：Vultr搭建ShadowSocks教程/index.html">
+<meta property="og:site_name" content="Way-Kwok Chu&#39;s Web Blog">
+<meta property="og:description" content="摘要: 搭建ss过程，安装bbr加速使用Vultr搭建ShadowSocks教程 本文原创来自：http://www.jianshu.com/p/4bf38b9d5d78 实现原理 本地发起连接请求，由远程服务器响应后然后将我们需要的数据返回到本地。 最低消费   2.5美元/月 网速自测 经过我个人测试后选择的Dallas节点，浏览youtube视频，网速能达到1MB/s，玩美服lol的延迟">
+<meta property="og:image" content="http://yoursite.com/2017/10/11/转载：Vultr搭建ShadowSocks教程/1.png">
+<meta property="og:image" content="http://yoursite.com/2017/10/11/转载：Vultr搭建ShadowSocks教程/2.png">
+<meta property="og:image" content="http://yoursite.com/2017/10/11/转载：Vultr搭建ShadowSocks教程/3.png">
+<meta property="og:image" content="http://yoursite.com/2017/10/11/转载：Vultr搭建ShadowSocks教程/4.png">
+<meta property="og:image" content="http://yoursite.com/2017/10/11/转载：Vultr搭建ShadowSocks教程/5.png">
+<meta property="og:image" content="http://yoursite.com/2017/10/11/转载：Vultr搭建ShadowSocks教程/6.png">
+<meta property="og:updated_time" content="2017-10-11T13:02:52.966Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="转载：Vultr搭建ShadowSocks教程">
+<meta name="twitter:description" content="摘要: 搭建ss过程，安装bbr加速使用Vultr搭建ShadowSocks教程 本文原创来自：http://www.jianshu.com/p/4bf38b9d5d78 实现原理 本地发起连接请求，由远程服务器响应后然后将我们需要的数据返回到本地。 最低消费   2.5美元/月 网速自测 经过我个人测试后选择的Dallas节点，浏览youtube视频，网速能达到1MB/s，玩美服lol的延迟">
+<meta name="twitter:image" content="http://yoursite.com/2017/10/11/转载：Vultr搭建ShadowSocks教程/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> 转载：Vultr搭建ShadowSocks教程 | Way-Kwok Chu's Web Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Way-Kwok Chu's Web Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">超人的博客|我的随想录</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                转载：Vultr搭建ShadowSocks教程
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2017-10-11T20:54:24+08:00" content="2017-10-11">
+              2017-10-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>摘要: 搭建ss过程，安装bbr加速<br>使用Vultr搭建ShadowSocks教程</p>
+<p>本文原创来自：<a href="http://www.jianshu.com/p/4bf38b9d5d78" target="_blank" rel="external">http://www.jianshu.com/p/4bf38b9d5d78</a></p>
+<p>实现原理</p>
+<p>本地发起连接请求，由远程服务器响应后然后将我们需要的数据返回到本地。</p>
+<p>最低消费</p>
+<p>  2.5美元/月</p>
+<p>网速自测</p>
+<p>经过我个人测试后选择的Dallas节点，浏览youtube视频，网速能达到1MB/s<br>，玩美服lol的延迟是200ms-250ms，这个速度已经很不错了，具体分析参考《国内连接美国VPN延迟(PING)多少算正常？》。</p>
+<p>PS：浏览其他人的博客都推荐的是LosAngeles节点，具体的自己通过测试后拿主意吧，懒得测试就选洛杉矶节点吧。</p>
+<p>了解更多，请戳Vultr 节点哪个比较快？</p>
+<p>知识储备</p>
+<p>1.懂Linux最好，不懂就按照下面操作来吧<br>2.肯折腾<br>3.懂英语，不懂的话…搭建SS（Shadow Socks）干吗？<br>4.具体步骤</p>
+<p>购买服务器</p>
+<p>1.打开链接1：我的夏季促销推广链接，无效的话尝试 链接2：我的普通推广链接。<br>这两个都指向官网，信不过我的自己去百度搜索vultr官网。【更多信息见最后的Vlutr服务器链接详细说明】</p>
+<p>2.注册账号并验证邮箱。</p>
+<p>3.测试速度或直接选择洛杉矶节点，测试节点网速请戳我并拉到页面最下面。如果感觉不满意，去试试其他的服务器提供商比如搬瓦工等等，个人感觉vultr还可以。<br>4.充值，点击左侧的Billing，最低五美元，这一步因人而异。我个人选择使用Paypal支付的$5。<br>5.搭建服务器，点击左侧的Servers，依次选择Server Location——你测试的最快的或者洛杉矶；Server Type——Cent OS7 x64（这个我可以提供技术支持，本文基于CentOS 7 x64）或其他你懂的；Server Size——只是搭建ss，选第一个就够了($5/mon)；其他的选填。然后点击右下角的Deploy Now。稍等片刻，服务器就可以装好了。<br>6.装好后，你可以看到如下界面：<br><img src="/2017/10/11/转载：Vultr搭建ShadowSocks教程/1.png" alt="1"><br>servers<br>点击可以查看服务器的相关信息：<br><img src="/2017/10/11/转载：Vultr搭建ShadowSocks教程/2.png" alt="2"><br>server information</p>
+<p>接下来操作需要的信息是IP Address，Username和Password。这个页面不要关，一会直接复制粘贴相关信息。</p>
+<p>远程连接服务器</p>
+<p>方法①点击刚才的网页的右上角的五个按钮最左边的View Console进行操作。</p>
+<p>方法②下载Xshell进行操作，建议后者，方面使用（主要是支持复制粘贴）管理。</p>
+<p>以Xshell为例。</p>
+<p>下载安装Xshell。<br>安装完成后新建会话（Alt+N）。依次填写图中信息。<br>名称可以是Vultr或者其他，协议选择SSH，主机填写之前的IP Address，端口号选择22。<br><img src="/2017/10/11/转载：Vultr搭建ShadowSocks教程/3.png" alt="3"><br>连接</p>
+<p>点击左侧的用户身份验证，填写信息。方法选择Password，用户名为之前的Username（一般都是root），密码为之前的Password（这个建议直接复制粘贴过来，系统给的有点复杂）<br><img src="/2017/10/11/转载：Vultr搭建ShadowSocks教程/4.png" alt="4"><br>用户身份验证</p>
+<p>填写完之后点击确定。然后点击连接。出现其他提示的话选择接受就可以了。这时你就可以看到一个命令控制台了。这时就算连接成功了。</p>
+<p>搭建 Shadowsocks 服务</p>
+<p>安装组件</p>
+<p>$ yum install m2crypto python-setuptools<br>$ easy_install pip<br>$ pip install shadowsocks<br>安装完成后配置服务器参数</p>
+<p>$ vi  /etc/shadowsocks.json<br>写入如下配置:</p>
+<p>{<br>    “server”:”0.0.0.0”,<br>    “server_port”:443,<br>    “local_address”: “127.0.0.1”,<br>    “local_port”:1080,<br>    “password”:”123456”,<br>    “timeout”:300,<br>    “method”:”aes-256-cfb”,<br>    “fast_open”: false<br>}<br>多端口的如下：</p>
+<p>{<br>    “server”:”0.0.0.0”,<br>    “local_address”: “127.0.0.1”,<br>    “local_port”:1080,<br>    “port_password”: {<br>         “443”: “443”,<br>         “8888”: “8888”<br>     },<br>    “timeout”:300,<br>    “method”:”aes-256-cfb”,<br>    “fast_open”: false<br>}<br>其中server字段与local_address填写之前的IP Address。password是自己用于连接这个shadow socks的密码，自定义就好。<br>其他的不需要更改。</p>
+<p>然后保存退出。</p>
+<p>vi 的命令: 按 “i” 进入编辑模式，编辑后按 “esc” 退出编辑模式， 输入 “:wq” 保存退出vi。</p>
+<p>配置防火墙</p>
+<p>这一步主要是为了提高系统安全性。</p>
+<h1 id="安装防火墙"><a href="#安装防火墙" class="headerlink" title="安装防火墙"></a>安装防火墙</h1><p>$ yum install firewalld</p>
+<h1 id="启动防火墙"><a href="#启动防火墙" class="headerlink" title="启动防火墙"></a>启动防火墙</h1><p>$ systemctl start firewalld<br>开启防火墙相应的端口</p>
+<p>方法一(推荐)</p>
+<h1 id="端口号是你自己设置的端口"><a href="#端口号是你自己设置的端口" class="headerlink" title="端口号是你自己设置的端口"></a>端口号是你自己设置的端口</h1><p>$ firewall-cmd –permanent –zone=public –add-port=443/tcp<br>$ firewall-cmd –reload<br>方法二（麻烦，没必要）</p>
+<p>新建文件ss.xml</p>
+<p>$ vi /usr/lib/firewalld/services/ss.xml<br>粘贴下面的代码</p>
+<p>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;</p>
+<p><service><br>  <short>SS</short><br>  <description>Shadowsocks port<br>  </description><br>  <port protocol="tcp" port="443"><br></port></service><br>保存退出。</p>
+<p>开启端口，重启firewalld 服务，下面的ss是上述的文件的名字，区分大小写</p>
+<p>$ firewall-cmd –permanent –add-service=ss<br>$ firewall-cmd –reload<br>启动 Shadowsocks 服务</p>
+<p>$ ssserver -c /etc/shadowsocks.json<br>如果想干点其他的实现后台运行，使用</p>
+<p>$ nohup ssserver -c /etc/shadowsocks.json &amp;<br>连接</p>
+<p>这样服务器就搭建好了。全平台的连接方法戳我。</p>
+<p>PC连接</p>
+<p>下载Shadow Socks客户端。SS加速器客户端下载<br>选择适合的版本，下载并解压运行。</p>
+<p>填写信息:服务器地址，端口号，密码，加密方式与代理端口默认即可<br><img src="/2017/10/11/转载：Vultr搭建ShadowSocks教程/5.png" alt="5"><br>SS信息填写</p>
+<p>填写完之后点击确定，然后到托盘中右键选择开启”启用系统代理”。</p>
+<p>iOS连接</p>
+<p>在App Store下载Wingy。</p>
+<p>填写信息:服务器，端口，密码，代理模式，加密方式默认即可。<br><img src="/2017/10/11/转载：Vultr搭建ShadowSocks教程/6.png" alt="6"><br>Wingy信息填写</p>
+<p>MacOS连接</p>
+<p>官方教程</p>
+<p>Android连接</p>
+<p>官方教程</p>
+<p>国外站点</p>
+<p>Google</p>
+<p>Youtube</p>
+<p>Facebook</p>
+<p>如果以上没有问题的话，这时候你就可以畅游外面的世界了。点击上述链接测试吧。</p>
+<p>Vultr CentOS7安装Google BBR加速工具方法</p>
+<p>本文原创来自：<a href="https://www.vultrclub.com/174.html" target="_blank" rel="external">https://www.vultrclub.com/174.html</a></p>
+<p>一般而言，服务器本身的速度是决定我们项目打开速度、下载速度的关键，但是我们也可以借助第三方软件工具等提高加速效果，比如我们肯定很多人都熟悉的锐速、Net-Speeder可以双倍发包流量，可以减少超时和提高下载速度。这不在前一段时间，来自大名鼎鼎的谷歌发布开源Google BBR工具，可以提高发包数据量，起到加速作用。</p>
+<p>这里，我们也在Vultr VPS中安装Google BBR工具，因为是支持KVM和XEN架构的，我们的VULTR都是KVM架构所以肯定支持，但是由于内核的问题，我们需要调试和安装必备的内核和组件才 可以使用，我们一起安装试试吧。</p>
+<p>第一、准备工作</p>
+<p>这里我选择使用Vultr美国洛杉矶机房5美金月付方案，系统采用CENTOS7 64BIT。很多人要问为什么不选择速度较好的日本机房，因为日本机房虽然目前用NTT线路，PING速度看着还可以，但是稳定性不行，所以我不选择，尤其是晚上速度很差。</p>
+<p>第二、查看当前核心</p>
+<p>uname -r</p>
+<p>这里我们看到当前CENTOS7核心是3.10.0-514.2.2.el7.x86_64，这个核心是不可以安装BBR的。</p>
+<p>第三、更新内核</p>
+<p>rpm –import <a href="https://www.elrepo.org/RPM-GPG-KEY-elrepo.org" target="_blank" rel="external">https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</a></p>
+<p>rpm -Uvh <a href="http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm" target="_blank" rel="external">http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</a></p>
+<p>安装4.9.0内核</p>
+<p>yum –enablerepo=elrepo-kernel install kernel-ml -y</p>
+<p>我们要知道，BBR目前只支持4.9.0内核，其他内核是不行的，需要更换内核才可以。</p>
+<p>第四、检查内核是否更新</p>
+<p>rpm -qa | grep kernel</p>
+<p>我们看到了有4.9.0内核，需要启动才可以。</p>
+<p>grub2-set-default 1</p>
+<p>然后重启</p>
+<p>shutdown -r now</p>
+<p>第五、检查是否生效</p>
+<p>uname -r</p>
+<p>检查当前内核是不是4.9.4-1.el7.elrepo.x86_64.</p>
+<p>看来内核是搞定了，我们那就开始安装BBR了。</p>
+<p>第六、安装Google BBR</p>
+<p>echo ‘net.core.default_qdisc=fq’ | sudo tee -a /etc/sysctl.conf</p>
+<p>echo ‘net.ipv4.tcp_congestion_control=bbr’ | sudo tee -a /etc/sysctl.conf</p>
+<p>sysctl -p</p>
+<p>第七、检查BBR是否成功</p>
+<p>sysctl net.ipv4.tcp_available_congestion_control</p>
+<p>执行命令，看看是否是提示”net.ipv4.tcp_available_congestion_control = bbr cubic reno”</p>
+<p>sysctl -n net.ipv4.tcp_congestion_control</p>
+<p>执行命令，是否提示bbr</p>
+<p>lsmod | grep bbr</p>
+<p>执行命令，是否看到BBR提示。</p>
+<p>能看到上面提示，就说明BBR安装成功。后面，我们再去安装需要的工具，比如SS或者其他项目，速度上是有明显提升的。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/06/再次测试/" rel="next" title="再次测试">
+                <i class="fa fa-chevron-left"></i> 再次测试
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+ <!-- 多说评论框 start -->  
+        <div class="ds-thread" data-thread-key="<%- page.path %>" data-title="<%- page.title %>" data-url="<%- page.permalink %>"></div>  
+<!-- 多说评论框 end -->  
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gaoqiaominfu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="、Superman" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">、Superman</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">64</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">0</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装防火墙"><span class="nav-number">1.</span> <span class="nav-text">安装防火墙</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启动防火墙"><span class="nav-number">2.</span> <span class="nav-text">启动防火墙</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#端口号是你自己设置的端口"><span class="nav-number">3.</span> <span class="nav-text">端口号是你自己设置的端口</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">、Superman</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

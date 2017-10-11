@@ -207,6 +207,128 @@
             
               
                 
+                <a class="post-title-link" href="/2017/06/20/You-Get——基于Python3的媒体下载工具/" itemprop="url">
+                  You-Get——基于Python3的媒体下载工具
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2017-06-20T19:04:52+08:00" content="2017-06-20">
+              2017-06-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>You-Get是一个基于 Python 3 的下载工具。使用 You-Get 可以很轻松的下载到网络上的视频、图片及音乐。</p>
+<p>项目主页：<a href="https://github.com/soimort/you-get" target="_blank" rel="external">https://github.com/soimort/you-get</a><br>You-Get 主页：<a href="https://you-get.org/" target="_blank" rel="external">https://you-get.org/</a><br>You-Get 原版中文说明：<a href="https://github.com/soimort/you-get/wiki/中文说明/" target="_blank" rel="external">https://github.com/soimort/you-get/wiki/中文说明/</a><br>作者：soimort<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/1.gif" alt="1"><br>You-Get</p>
+<p>Python 是一款跨平台编程语言，Liunx 以及 Mac OS 下都可以使用，此处展示仅使用 Windows。</p>
+<p>0x01 使用 You-Get 下载视频</p>
+<p>Step1 下载与安装 Python 3</p>
+<p>1.访问 Python 官方网站下载对应版本的Python，You-Get基于Python 3，建议下载 Python 3.5.1。<br>2.安装 Python 3.5.1，注意勾选Add Python 3.5 to PATH<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/2.png" alt="1"><br>勾选</p>
+<p>3.按Win+R键打开运行，输入cmd，再输入python并回车执行，如果出现如下界面，则代表安装成功。<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/3.png" alt="1"><br>安装成功</p>
+<p>Step2 安装You-Get</p>
+<p>1.打开cmd，输入命令并执行</p>
+<p>pip3 install you-get<br>2.输入命令，检测 You-Get 是否安装成功</p>
+<p>you-get<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/4.png" alt="1"><br>you-get安装成功<br>Step3 开始下载吧</p>
+<p>打开cmd输入命令</p>
+<p>you-get [视频地址]<br>e.g.下载一段美拍视频<br>输入如下命令</p>
+<p>you-get <a href="http://www.meipai.com/media/454570774" target="_blank" rel="external">http://www.meipai.com/media/454570774</a><br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/5.png" alt="1"><br>点击左上角可以快速粘贴<br>文件保存在C:\Users\用户名目录下，如果想自定义保存位置，使用如下命令即可</p>
+<p>e.g.下载一段美拍视频并保存在E:\Desktop</p>
+<p>you-get -o E:/Desktop <a href="http://www.meipai.com/media/454570774" target="_blank" rel="external">http://www.meipai.com/media/454570774</a><br>0x02 You-Get 有关视频的其他用法</p>
+<p>You-Get仅用来下载视频显得有些大材小用了，作者也给出了You-Get的一些其他用法，这里着重介绍几个。</p>
+<p>1.选择视频下载格式和清晰度</p>
+<p>通常网页视频的格式为.flv，但部分网站会提供好几种视频格式，我们可以使用 You-Get 下载这些视频。</p>
+<p>e.g.下载一段优酷视频<br>1.查看当前视频的清晰度和格式</p>
+<p>you-get -i <a href="http://v.youku.com/v_show/id_XMTQ2NzQyMjY1Ng.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XMTQ2NzQyMjY1Ng.html</a><br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/6.png" alt="1"></p>
+<p>视频提供三种格式，三种清晰度<br>2.选择需要下载的清晰度及格式</p>
+<p>you-get –format=hd2 <a href="http://v.youku.com/v_show/id_XMTQ2NzQyMjY1Ng.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XMTQ2NzQyMjY1Ng.html</a></p>
+<p><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/7.png" alt="1"><br>下载成功<br>2.在本地播放器中播放流媒体视频</p>
+<p>Flash 因CPU占用高被嗤之以鼻，而 You-Get 可以直接在本地播放器中播放网页视频。类似功能的还有 Livestreamer 这个神奇的工具。</p>
+<p>e.g.在 PotPlayer 中播放一段下面这段爱奇艺视频<br>(视频链接：<a href="http://www.iqiyi.com/v_19rrgzy5ls.html" target="_blank" rel="external">http://www.iqiyi.com/v_19rrgzy5ls.html</a>)</p>
+<p>1.在资源管理器中打开 PotPlayer 安装目录<br>2.按住Shift并右击鼠标，选择在此处打开命令窗口<br>3.输入下面的 You-Get 播放命令即可</p>
+<p>you-get -p PotPlayerMini64.exe <a href="http://v.youku.com/v_show/id_XMTY0MTA4ODM1Mg==.html" target="_blank" rel="external">http://v.youku.com/v_show/id_XMTY0MTA4ODM1Mg==.html</a><br>(注意 PotPalyer 可执行文件的文件名的大小写，大小写错误将会导致 you-get 报错，如果 Potplayer 播放失败请尝试使用 VLC 进行播放)<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/8.jpg" alt="1"><br>播放成功<br>3.暂停下载与继续下载</p>
+<p>1.暂停下载：和Linux一样，按Ctrl+C可以中断命令，下载目录下会保存有一个以.download为扩展名的缓存文件。</p>
+<p>2.继续下载：重新执行下载任务，如果下载目录下有上次下载保存的缓存文件，则继续上次下载进度。</p>
+<p>3.强制重新下载（即使下载完成也会重新写入）：</p>
+<p>you-get -f <a href="http://www.meipai.com/media/437971164" target="_blank" rel="external">http://www.meipai.com/media/437971164</a><br>4.下载视频列表中的所有视频</p>
+<p>优酷等网站会提供视频列表，而 You-Get 可以通过视频列表进行批量下载。</p>
+<p>e.g.下载一个优酷视频专辑</p>
+<p>you-get <a href="http://www.youku.com/playlist_show/id_25917721.html" target="_blank" rel="external">http://www.youku.com/playlist_show/id_25917721.html</a><br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/9.png" alt="1"><br>下载成功<br>5.下载Bilibili视频的弹幕</p>
+<p>看Bilibili没有弹幕简直失去了人生一大乐趣，You-Get同样提供了弹幕下载功能。</p>
+<p>1.输入命令下载 Bilibili 视频<br>2.下载完成后会自动下载.xml格式的弹幕<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/10.png" alt="1"><br>Bilibili视频及弹幕下载</p>
+<p>3.使用 Danmu2Ass 将.xml格式转换为.ass格式<br>4.打开播放器，将.ass文件加载即可<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/11.png" alt="1"><br>PotPlayer中加载弹幕<br>0x03 You-Get 下载图片</p>
+<p>You-Get 不但支持视频下载，同样支持图片下载，支持的站点已在其主页列出，部分网站支持批量下载。<br>1.访问网站<br>2.点击图片/帖子，进入图片/帖子详情<br>3.复制地址到 You-Get 下载即可</p>
+<p>截图中展现了一些例子</p>
+<p><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/12.png" alt="1"><br>Twitter<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/13.png" alt="1"><br>imgur<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/14.png" alt="1"><br>Flickr<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/15.png" alt="1"><br>Pinterest<br>0x04 其他的一些</p>
+<p>1.使用 You-Get 建议先安装FFmpeg或 Libav<br>4.部分网站在中国大陆可能无法访问，如果想正常访问这些网站，可以去问问神奇海螺。<br><img src="/2017/06/20/You-Get——基于Python3的媒体下载工具/16.jpg" alt="1"><br>神奇海螺</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/05/30/JFK遇刺/" itemprop="url">
                   JFK遇刺
                 </a>
@@ -944,87 +1066,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/04/win7安装提示对话框：无法配置在此计算机硬件上运行该怎么办？/" itemprop="url">
-                  win7安装提示对话框：无法配置在此计算机硬件上运行该怎么办？
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2017-03-04T19:42:50+08:00" content="2017-03-04">
-              2017-03-04
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><p>win7安装提示对话框：无法配置在此计算机硬件上运行该怎么办？有时候安装系统时，部署过程中会弹出一个提示框，windows安装程序无法将windows配置为在此计算机的语言幕后允许。然后重启无限循环。下面分享解决办法<br>有时候安装系统时，部署过程中会弹出一个提示框，windows安装程序无法将windows配置为在此计算机的语言幕后允许。然后重启无限循环。解决方法在此<br>1、出现提示框时，不要点击X，也不要点击确定，不然会重启，<br><img src="/2017/03/04/win7安装提示对话框：无法配置在此计算机硬件上运行该怎么办？/a.jpg" alt="a"><br>2、此时按下shift和f10键。弹出一个窗口，输入cd oobe 回车，再输入msoobe.exe回车，会弹出另一个界面，按照提示进行即可，完成后回到错误弹窗界面单击确定，系统重启，之后一切正常。。<br><img src="/2017/03/04/win7安装提示对话框：无法配置在此计算机硬件上运行该怎么办？/b.jpg" alt="b"><br>注意事项：系统不能过度精简。   </p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1071,7 +1112,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">63</span>
+              <span class="site-state-item-count">64</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
