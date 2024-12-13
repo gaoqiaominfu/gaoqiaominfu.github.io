@@ -147,6 +147,75 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/13/Hexo%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0theme-next-canvas-nest%E5%87%A0%E4%BD%95%E5%8A%A8%E6%95%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Way-Kwok Chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Way-Kwok Chu's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/13/Hexo%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0theme-next-canvas-nest%E5%87%A0%E4%BD%95%E5%8A%A8%E6%95%88/" class="post-title-link" itemprop="url">Hexo博客NexT主题添加theme-next-canvas-nest几何动效</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-12-13 14:51:20" itemprop="dateCreated datePublished" datetime="2024-12-13T14:51:20+08:00">2024-12-13</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="安装-NexT-Canvas-Nest-几何动效"><a href="#安装-NexT-Canvas-Nest-几何动效" class="headerlink" title="安装 NexT Canvas Nest 几何动效"></a>安装 NexT Canvas Nest 几何动效</h1><h2 id="步骤-1-进入-Hexo-目录"><a href="#步骤-1-进入-Hexo-目录" class="headerlink" title="步骤 1: 进入 Hexo 目录"></a>步骤 1: 进入 Hexo 目录</h2><p>首先，通过命令行进入你的 Hexo 项目目录。在这个目录下，你应该能看到 <code>scaffolds</code>、<code>source</code>、<code>themes</code> 等文件夹以及 <code>_config.yml</code> 和 <code>package.json</code> 文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line"><span class="comment"># 应显示：scaffolds  source  themes  _config.yml  package.json</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="步骤-2-创建-footer-swig-文件"><a href="#步骤-2-创建-footer-swig-文件" class="headerlink" title="步骤 2: 创建 footer.swig 文件"></a>步骤 2: 创建 footer.swig 文件</h2><p>接下来，在 <code>hexo/source/_data</code> 目录下创建一个名为 <code>footer.swig</code> 的文件（如果 <code>_data</code> 目录不存在，请先创建它）。</p>
+<p>编辑 <code>footer.swig</code> 文件，并添加以下代码来引入 Canvas Nest 的几何动效脚本：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">color</span>=<span class="string">&quot;0,0,255&quot;</span> <span class="attr">opacity</span>=<span class="string">&quot;0.5&quot;</span> <span class="attr">zIndex</span>=<span class="string">&quot;-1&quot;</span> <span class="attr">count</span>=<span class="string">&quot;99&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>你可以根据自己的喜好调整 <code>color</code>（颜色）、<code>opacity</code>（透明度）、<code>zIndex</code>（层叠顺序）和 <code>count</code>（粒子数量）等参数。</p>
+<h2 id="步骤-3-配置-NexT-主题"><a href="#步骤-3-配置-NexT-主题" class="headerlink" title="步骤 3: 配置 NexT 主题"></a>步骤 3: 配置 NexT 主题</h2><p>最后，在 NexT 主题的 <code>_config.yml</code> 文件中，找到 <code>custom_file_path</code> 部分，并取消注释 <code>footer</code> 选项，以便 Hexo 能够加载你自定义的 <code>footer.swig</code> 文件。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义自定义文件路径</span></span><br><span class="line"><span class="comment"># 在站点目录 `source/_data` 中创建你的自定义文件，并取消注释下面需要的文件</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="attr">footer:</span> <span class="string">source/_data/footer.swig</span>  <span class="comment"># 取消注释此行</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="comment">#style: source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
+
+<p>完成以上步骤后，你的 Hexo 博客应该已经成功添加了 NexT Canvas Nest 的几何动效。如果你想要进一步优化或调整动效，可以回到 <code>footer.swig</code> 文件中修改相应的参数。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/13/%E5%90%8E%E6%B2%A1%E6%9C%89%E5%91%BD%E4%BB%A4%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -172,7 +241,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-12-13 14:44:55 / 修改时间：14:47:23" itemprop="dateCreated datePublished" datetime="2024-12-13T14:44:55+08:00">2024-12-13</time>
+              <time title="创建时间：2024-12-13 14:44:55 / 修改时间：14:50:17" itemprop="dateCreated datePublished" datetime="2024-12-13T14:44:55+08:00">2024-12-13</time>
             </span>
 
           
@@ -186,7 +255,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="section"># Arch Linux 安装 NVM 后没有命令问题解决方案</span></span><br><span class="line"></span><br><span class="line">在 Arch Linux 系统中安装 <span class="code">`nvm`</span> 后，可能会遇到 <span class="code">`nvm`</span> 命令缺失的问题。这个问题是由于 <span class="code">`nvm`</span> 的设计方式所导致的，需要手动启用它。</span><br><span class="line"></span><br><span class="line"><span class="section">## 解决方案</span></span><br><span class="line"></span><br><span class="line">根据 Arch Linux 仓库中 <span class="code">`nvm`</span> 软件包的说明，您需要手动将 <span class="code">`nvm`</span> 源代码加载到当前会话中。具体操作如下：</span><br><span class="line"></span><br><span class="line"><span class="section">### 1. 暂时启用 NVM：</span></span><br><span class="line"></span><br><span class="line">可以通过以下命令手动启用 <span class="code">`nvm`</span>，该命令将加载 <span class="code">`nvm`</span> 配置：</span><br><span class="line"></span><br><span class="line"><span class="code">```bash</span></span><br><span class="line"><span class="code">source /usr/share/nvm/init-nvm.sh</span></span><br></pre></td></tr></table></figure>
+          <h1 id="Arch-Linux-安装-NVM-后没有命令问题解决方案"><a href="#Arch-Linux-安装-NVM-后没有命令问题解决方案" class="headerlink" title="Arch Linux 安装 NVM 后没有命令问题解决方案"></a>Arch Linux 安装 NVM 后没有命令问题解决方案</h1><p>在 Arch Linux 系统中安装 <code>nvm</code> 后，可能会遇到 <code>nvm</code> 命令缺失的问题。这个问题是由于 <code>nvm</code> 的设计方式所导致的，需要手动启用它。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>根据 Arch Linux 仓库中 <code>nvm</code> 软件包的说明，您需要手动将 <code>nvm</code> 源代码加载到当前会话中。具体操作如下：</p>
+<h3 id="1-暂时启用-NVM："><a href="#1-暂时启用-NVM：" class="headerlink" title="1. 暂时启用 NVM："></a>1. 暂时启用 NVM：</h3><p>可以通过以下命令手动启用 <code>nvm</code>，该命令将加载 <code>nvm</code> 配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /usr/share/nvm/init-nvm.sh</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-长期启用-NVM："><a href="#2-长期启用-NVM：" class="headerlink" title="2. 长期启用 NVM："></a>2. 长期启用 NVM：</h3><p>为了在每次启动时自动启用 <code>nvm</code>，需要将此命令添加到您的 shell 启动文件中。如果您使用的是 <code>zsh</code>，则需要将命令添加到 <code>~/.zshrc</code> 文件中；如果您使用的是 <code>bash</code>，则将其添加到 <code>~/.bashrc</code> 文件中。</p>
 <p>对于 <code>zsh</code> 用户，执行以下命令：</p>
@@ -200,74 +272,6 @@
 <p>以上就是在 Arch Linux 中安装 <code>nvm</code> 后遇到命令缺失问题的解决方案。希望对您有所帮助！如果有任何疑问，欢迎留言或联系我。</p>
 <pre><code>
 </code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/13/Hexo%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0theme-next-canvas-nest%E5%87%A0%E4%BD%95%E5%8A%A8%E6%95%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Way-Kwok Chu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Way-Kwok Chu's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/13/Hexo%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0theme-next-canvas-nest%E5%87%A0%E4%BD%95%E5%8A%A8%E6%95%88/" class="post-title-link" itemprop="url">Hexo博客NexT主题添加theme-next-canvas-nest几何动效</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-13 14:29:19" itemprop="dateCreated datePublished" datetime="2024-12-13T14:29:19+08:00">2024-12-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 安装 NexT Canvas Nest 几何动效</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 步骤 1: 进入 Hexo 目录</span></span><br><span class="line"></span><br><span class="line">首先，通过命令行进入你的 Hexo 项目目录。在这个目录下，你应该能看到 <span class="code">`scaffolds`</span>、<span class="code">`source`</span>、<span class="code">`themes`</span> 等文件夹以及 <span class="code">`_config.yml`</span> 和 <span class="code">`package.json`</span> 文件。</span><br><span class="line"></span><br><span class="line"><span class="code">```bash</span></span><br><span class="line"><span class="code">$ cd hexo</span></span><br><span class="line"><span class="code">$ ls</span></span><br><span class="line"><span class="code"># 应显示：scaffolds  source  themes  _config.yml  package.json</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="步骤-2-创建-footer-swig-文件"><a href="#步骤-2-创建-footer-swig-文件" class="headerlink" title="步骤 2: 创建 footer.swig 文件"></a>步骤 2: 创建 footer.swig 文件</h2><p>接下来，在 <code>hexo/source/_data</code> 目录下创建一个名为 <code>footer.swig</code> 的文件（如果 <code>_data</code> 目录不存在，请先创建它）。</p>
-<p>编辑 <code>footer.swig</code> 文件，并添加以下代码来引入 Canvas Nest 的几何动效脚本：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">color</span>=<span class="string">&quot;0,0,255&quot;</span> <span class="attr">opacity</span>=<span class="string">&quot;0.5&quot;</span> <span class="attr">zIndex</span>=<span class="string">&quot;-1&quot;</span> <span class="attr">count</span>=<span class="string">&quot;99&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>你可以根据自己的喜好调整 <code>color</code>（颜色）、<code>opacity</code>（透明度）、<code>zIndex</code>（层叠顺序）和 <code>count</code>（粒子数量）等参数。</p>
-<h2 id="步骤-3-配置-NexT-主题"><a href="#步骤-3-配置-NexT-主题" class="headerlink" title="步骤 3: 配置 NexT 主题"></a>步骤 3: 配置 NexT 主题</h2><p>最后，在 NexT 主题的 <code>_config.yml</code> 文件中，找到 <code>custom_file_path</code> 部分，并取消注释 <code>footer</code> 选项，以便 Hexo 能够加载你自定义的 <code>footer.swig</code> 文件。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义自定义文件路径</span></span><br><span class="line"><span class="comment"># 在站点目录 `source/_data` 中创建你的自定义文件，并取消注释下面需要的文件</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="attr">footer:</span> <span class="string">source/_data/footer.swig</span>  <span class="comment"># 取消注释此行</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="comment">#style: source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
-
-<p>完成以上步骤后，你的 Hexo 博客应该已经成功添加了 NexT Canvas Nest 的几何动效。如果你想要进一步优化或调整动效，可以回到 <code>footer.swig</code> 文件中修改相应的参数。</p>
 
       
     </div>
