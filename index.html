@@ -147,6 +147,131 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/16/%E6%9B%B4%E6%8D%A2Hexo%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87favicon/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Way-Kwok Chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Way-Kwok Chu's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/12/16/%E6%9B%B4%E6%8D%A2Hexo%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87favicon/" class="post-title-link" itemprop="url">更换Hexo网页图标favicon</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-12-16 13:45:52 / 修改时间：13:52:36" itemprop="dateCreated datePublished" datetime="2024-12-16T13:45:52+08:00">2024-12-16</time>
+            </span>
+
+          
+            <span id="/2024/12/16/%E6%9B%B4%E6%8D%A2Hexo%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87favicon/" class="post-meta-item leancloud_visitors" data-flag-title="更换Hexo网页图标favicon" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2024/12/16/%E6%9B%B4%E6%8D%A2Hexo%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87favicon/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2024/12/16/%E6%9B%B4%E6%8D%A2Hexo%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87favicon/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>本文介绍如何通过 <strong>主题配置文件</strong> 修改 Hexo 网站的 favicon（网页标签页的小图标）。</p>
+<p>除了这种方法，还可以在 Hexo 根目录下统一设置 favicon。尽管这种方式无需对每个主题单独配置，但由于以下原因未采用：</p>
+<ol>
+<li>标签页图标的颜色与样式需要与主题（theme）风格匹配，才能更加美观。</li>
+<li>尝试在 Hexo 根目录的配置文件中设置 favicon 时，未成功生效。</li>
+</ol>
+<p>本文以修改主题 <strong>Next</strong> 的 favicon 为例，展示具体操作步骤。</p>
+<hr>
+<h2 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h2><p><strong>修改前</strong>（Next 主题默认图标）：</p>
+<p><img src="/images/1.png" alt="默认标签页图标"></p>
+<p><strong>修改后</strong>：</p>
+<p><img src="/images/2.png" alt="新标签页图标"></p>
+<hr>
+<h2 id="制作-favicon-图标"><a href="#制作-favicon-图标" class="headerlink" title="制作 favicon 图标"></a>制作 favicon 图标</h2><ol>
+<li>准备一张合适的图片，用作标签页&#x2F;网页的小图标。</li>
+<li>使用在线工具将图片转换为 favicon 图标。</li>
+</ol>
+<h3 id="在线工具推荐"><a href="#在线工具推荐" class="headerlink" title="在线工具推荐"></a>在线工具推荐</h3><p>我使用了 <a target="_blank" rel="noopener" href="https://www.bitbug.net/">Bitbug</a> 进行转换。支持生成多种尺寸的图标。</p>
+<p>生成了以下两种尺寸：</p>
+<ul>
+<li>16x16 像素</li>
+<li>32x32 像素</li>
+</ul>
+<hr>
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><h3 id="1-放置图标文件"><a href="#1-放置图标文件" class="headerlink" title="1. 放置图标文件"></a>1. 放置图标文件</h3><p>将生成的 favicon 图标文件保存到主题目录下的 <code>source/images/</code> 文件夹中。例如：</p>
+<ul>
+<li><code>favicon16.ico</code></li>
+<li><code>favicon32.ico</code></li>
+</ul>
+<h3 id="2-编辑主题配置文件"><a href="#2-编辑主题配置文件" class="headerlink" title="2. 编辑主题配置文件"></a>2. 编辑主题配置文件</h3><p>打开主题目录中的 <code>_config.yml</code> 文件，找到 <code>favicon</code> 配置项，修改为新的图标路径：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon16.ico</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon32.ico</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-本地预览"><a href="#3-本地预览" class="headerlink" title="3. 本地预览"></a>3. 本地预览</h3><p>保存配置文件后，运行以下命令生成静态文件并启动本地预览：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器中访问本地地址，查看 favicon 是否更换成功。</p>
+<h3 id="4-发布到远程服务器"><a href="#4-发布到远程服务器" class="headerlink" title="4. 发布到远程服务器"></a>4. 发布到远程服务器</h3><p>如果本地预览正常，运行以下命令将更改发布到远程分支：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li>如果修改后图标没有生效，可以尝试清除浏览器缓存。</li>
+<li>确保图标文件的路径与配置文件中的路径一致。</li>
+<li>如果仍未生效，请检查主题是否覆盖了 favicon 的设置，或 Hexo 根目录是否存在干扰配置。</li>
+</ol>
+<hr>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/13/Hexo%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0theme-next-canvas-nest%E5%87%A0%E4%BD%95%E5%8A%A8%E6%95%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -602,7 +727,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
