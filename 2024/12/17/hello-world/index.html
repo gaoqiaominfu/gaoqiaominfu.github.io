@@ -22,28 +22,34 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Way-Kwok Chu&#39;s Blog">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="2022 年了，不会还有人没用上 Arch 吧！没有安装也不要紧，今天带你安装 Arch，走进 Arch 的世界。 安装须知Arch 安装不是最难的，但也不是傻瓜式难度安装（有手就行），安装 Arch 不仅需要你动动手指，还需要你有一台电脑，有一个 U 盘，你还必须有可以访问互联网的网络，你还需要有足够的胆量，因为这可能是你第一次安装这个系统，你需要克服恐惧，直面 Arch。 如果你满足上面这一系">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Archlinux安装教程">
+<meta property="og:url" content="http://example.com/2024/12/17/hello-world/index.html">
 <meta property="og:site_name" content="Way-Kwok Chu&#39;s Blog">
+<meta property="og:description" content="2022 年了，不会还有人没用上 Arch 吧！没有安装也不要紧，今天带你安装 Arch，走进 Arch 的世界。 安装须知Arch 安装不是最难的，但也不是傻瓜式难度安装（有手就行），安装 Arch 不仅需要你动动手指，还需要你有一台电脑，有一个 U 盘，你还必须有可以访问互联网的网络，你还需要有足够的胆量，因为这可能是你第一次安装这个系统，你需要克服恐惧，直面 Arch。 如果你满足上面这一系">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2022/05/linux-file-structure-2.png">
+<meta property="article:published_time" content="2024-12-17T06:26:08.141Z">
+<meta property="article:modified_time" content="2024-12-17T06:29:06.919Z">
 <meta property="article:author" content="Way-Kwok Chu">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.runoob.com/wp-content/uploads/2022/05/linux-file-structure-2.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2024/12/17/hello-world/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Way-Kwok Chu's Blog</title>
+  <title>Archlinux安装教程 | Way-Kwok Chu's Blog</title>
   
 
 
@@ -141,9 +147,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -159,10 +166,9 @@
       <meta itemprop="name" content="Way-Kwok Chu's Blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/17/hello-world/" class="post-title-link" itemprop="url">Archlinux安装教程</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Archlinux安装教程
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -182,6 +188,13 @@
               </span>
               <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
             </span>
   
   <span class="post-meta-item">
@@ -207,7 +220,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>2022 年了，不会还有人没用上 Arch 吧！没有安装也不要紧，今天带你安装 Arch，走进 Arch 的世界。</p>
+        <p>2022 年了，不会还有人没用上 Arch 吧！没有安装也不要紧，今天带你安装 Arch，走进 Arch 的世界。</p>
 <h2 id="安装须知"><a href="#安装须知" class="headerlink" title="安装须知"></a>安装须知</h2><p>Arch 安装不是最难的，但也不是傻瓜式难度安装（有手就行），安装 Arch 不仅需要你动动手指，还需要你有一台电脑，有一个 U 盘，你还必须有可以访问互联网的网络，你还需要有足够的胆量，因为这可能是你第一次安装这个系统，你需要克服恐惧，直面 Arch。</p>
 <p>如果你满足上面这一系列条件，恭喜你，可以继续听我 BB 了。如果不满足上述条件，那 Arch 可能与你无缘，早点 bye 吧～</p>
 <hr>
@@ -471,569 +484,37 @@
 ---
 </code></pre>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/17/%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Way-Kwok Chu">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Way-Kwok Chu's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/17/%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">电脑无法启动，报错代码 0xc000014c 的解决方法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-12-17 09:36:43 / 修改时间：10:39:47" itemprop="dateCreated datePublished" datetime="2024-12-17T09:36:43+08:00">2024-12-17</time>
-            </span>
-
-          
-            <span id="/2024/12/17/%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="电脑无法启动，报错代码 0xc000014c 的解决方法" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2024/12/17/%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2024/12/17/%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>当您的电脑出现 <strong>无法启动</strong> 并提示错误代码 <strong>0xc000014c</strong> 时，通常是由于系统关键文件损坏导致的。本文将通过 <strong>PE 系统</strong> 提供具体的修复方法，帮助您快速解决此问题。</p>
-<h2 id><a href="#" class="headerlink" title></a><img src="/images/3.png" alt="333"></h2><h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h3><ul>
-<li><strong>制作一个带有 PE 系统的启动 U 盘</strong>（推荐使用工具如 <strong>微PE助手</strong>）。  </li>
-<li>将启动 U 盘插入电脑的 USB 接口。</li>
-</ul>
-<hr>
-<h3 id="2-进入-PE-系统"><a href="#2-进入-PE-系统" class="headerlink" title="2. 进入 PE 系统"></a>2. 进入 PE 系统</h3><ol>
-<li><strong>启动电脑</strong> 并进入 <strong>BIOS 设置</strong>。  </li>
-<li>将 <strong>启动顺序</strong> 调整为从 <strong>U 盘启动</strong>。  </li>
-<li>成功进入 PE 系统后，打开文件管理器。</li>
-</ol>
-<hr>
-<h3 id="3-复制-SYSTEM-文件"><a href="#3-复制-SYSTEM-文件" class="headerlink" title="3. 复制 SYSTEM 文件"></a>3. 复制 SYSTEM 文件</h3><ol>
-<li>在文件管理器中，找到以下目录：  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\windows\system32\config\RegBack</span><br></pre></td></tr></table></figure></li>
-<li>定位到名为 <strong>SYSTEM</strong> 的文件。  </li>
-<li>将该文件复制到目标目录：  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\windows\system32\config</span><br></pre></td></tr></table></figure></li>
-<li>如果目标目录中已有 <strong>SYSTEM</strong> 文件，可以选择 <strong>覆盖</strong> 现有文件。</li>
-</ol>
-<hr>
-<h3 id="4-重启电脑"><a href="#4-重启电脑" class="headerlink" title="4. 重启电脑"></a>4. 重启电脑</h3><ul>
-<li>完成上述操作后，<strong>移除 U 盘</strong> 并重新启动电脑。  </li>
-<li>系统应能恢复正常启动。</li>
-</ul>
-<hr>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
-<li><p><strong>数据备份</strong>：<br>在进行任何操作前，建议使用 PE 系统对重要数据进行备份，以防操作不当导致数据丢失。</p>
-</li>
-<li><p><strong>文件完整性</strong>：<br>如果源目录下的文件已损坏或丢失，您可能需要使用 <strong>启动盘修复</strong> 工具或选择 <strong>重装系统</strong>。</p>
-</li>
-</ol>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过以上步骤，您可以有效修复 <strong>0xc000014c</strong> 的系统启动问题。如果问题依然存在，建议咨询专业人士或考虑重装系统以彻底解决。</p>
-<hr>
-<p>希望本教程对您有所帮助，欢迎在评论区留言分享您的修复经验！ 😊</p>
-<hr>
-<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p><code>系统修复</code> <code>电脑故障</code> <code>错误代码0xc000014c</code> <code>PE系统</code></p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/12/17/%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" rel="prev" title="电脑无法启动，报错代码 0xc000014c 的解决方法">
+      <i class="fa fa-chevron-left"></i> 电脑无法启动，报错代码 0xc000014c 的解决方法
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/16/%E6%9B%B4%E6%8D%A2Hexo%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87favicon/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Way-Kwok Chu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Way-Kwok Chu's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/16/%E6%9B%B4%E6%8D%A2Hexo%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87favicon/" class="post-title-link" itemprop="url">更换Hexo网页图标favicon</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-12-16 13:45:52 / 修改时间：13:52:36" itemprop="dateCreated datePublished" datetime="2024-12-16T13:45:52+08:00">2024-12-16</time>
-            </span>
-
-          
-            <span id="/2024/12/16/%E6%9B%B4%E6%8D%A2Hexo%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87favicon/" class="post-meta-item leancloud_visitors" data-flag-title="更换Hexo网页图标favicon" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2024/12/16/%E6%9B%B4%E6%8D%A2Hexo%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87favicon/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2024/12/16/%E6%9B%B4%E6%8D%A2Hexo%E7%BD%91%E9%A1%B5%E5%9B%BE%E6%A0%87favicon/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>本文介绍如何通过 <strong>主题配置文件</strong> 修改 Hexo 网站的 favicon（网页标签页的小图标）。</p>
-<p>除了这种方法，还可以在 Hexo 根目录下统一设置 favicon。尽管这种方式无需对每个主题单独配置，但由于以下原因未采用：</p>
-<ol>
-<li>标签页图标的颜色与样式需要与主题（theme）风格匹配，才能更加美观。</li>
-<li>尝试在 Hexo 根目录的配置文件中设置 favicon 时，未成功生效。</li>
-</ol>
-<p>本文以修改主题 <strong>Next</strong> 的 favicon 为例，展示具体操作步骤。</p>
-<hr>
-<h2 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h2><p><strong>修改前</strong>（Next 主题默认图标）：</p>
-<p><img src="/images/1.png" alt="默认标签页图标"></p>
-<p><strong>修改后</strong>：</p>
-<p><img src="/images/2.png" alt="新标签页图标"></p>
-<hr>
-<h2 id="制作-favicon-图标"><a href="#制作-favicon-图标" class="headerlink" title="制作 favicon 图标"></a>制作 favicon 图标</h2><ol>
-<li>准备一张合适的图片，用作标签页&#x2F;网页的小图标。</li>
-<li>使用在线工具将图片转换为 favicon 图标。</li>
-</ol>
-<h3 id="在线工具推荐"><a href="#在线工具推荐" class="headerlink" title="在线工具推荐"></a>在线工具推荐</h3><p>我使用了 <a target="_blank" rel="noopener" href="https://www.bitbug.net/">Bitbug</a> 进行转换。支持生成多种尺寸的图标。</p>
-<p>生成了以下两种尺寸：</p>
-<ul>
-<li>16x16 像素</li>
-<li>32x32 像素</li>
-</ul>
-<hr>
-<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><h3 id="1-放置图标文件"><a href="#1-放置图标文件" class="headerlink" title="1. 放置图标文件"></a>1. 放置图标文件</h3><p>将生成的 favicon 图标文件保存到主题目录下的 <code>source/images/</code> 文件夹中。例如：</p>
-<ul>
-<li><code>favicon16.ico</code></li>
-<li><code>favicon32.ico</code></li>
-</ul>
-<h3 id="2-编辑主题配置文件"><a href="#2-编辑主题配置文件" class="headerlink" title="2. 编辑主题配置文件"></a>2. 编辑主题配置文件</h3><p>打开主题目录中的 <code>_config.yml</code> 文件，找到 <code>favicon</code> 配置项，修改为新的图标路径：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon16.ico</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon32.ico</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="3-本地预览"><a href="#3-本地预览" class="headerlink" title="3. 本地预览"></a>3. 本地预览</h3><p>保存配置文件后，运行以下命令生成静态文件并启动本地预览：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
-
-<p>在浏览器中访问本地地址，查看 favicon 是否更换成功。</p>
-<h3 id="4-发布到远程服务器"><a href="#4-发布到远程服务器" class="headerlink" title="4. 发布到远程服务器"></a>4. 发布到远程服务器</h3><p>如果本地预览正常，运行以下命令将更改发布到远程分支：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
-<li>如果修改后图标没有生效，可以尝试清除浏览器缓存。</li>
-<li>确保图标文件的路径与配置文件中的路径一致。</li>
-<li>如果仍未生效，请检查主题是否覆盖了 favicon 的设置，或 Hexo 根目录是否存在干扰配置。</li>
-</ol>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/13/Hexo%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0theme-next-canvas-nest%E5%87%A0%E4%BD%95%E5%8A%A8%E6%95%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Way-Kwok Chu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Way-Kwok Chu's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/13/Hexo%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0theme-next-canvas-nest%E5%87%A0%E4%BD%95%E5%8A%A8%E6%95%88/" class="post-title-link" itemprop="url">Hexo博客NexT主题添加theme-next-canvas-nest几何动效</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-13 14:51:20" itemprop="dateCreated datePublished" datetime="2024-12-13T14:51:20+08:00">2024-12-13</time>
-            </span>
-
-          
-            <span id="/2024/12/13/Hexo%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0theme-next-canvas-nest%E5%87%A0%E4%BD%95%E5%8A%A8%E6%95%88/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo博客NexT主题添加theme-next-canvas-nest几何动效" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2024/12/13/Hexo%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0theme-next-canvas-nest%E5%87%A0%E4%BD%95%E5%8A%A8%E6%95%88/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2024/12/13/Hexo%E5%8D%9A%E5%AE%A2NexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0theme-next-canvas-nest%E5%87%A0%E4%BD%95%E5%8A%A8%E6%95%88/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="安装-NexT-Canvas-Nest-几何动效"><a href="#安装-NexT-Canvas-Nest-几何动效" class="headerlink" title="安装 NexT Canvas Nest 几何动效"></a>安装 NexT Canvas Nest 几何动效</h1><h2 id="步骤-1-进入-Hexo-目录"><a href="#步骤-1-进入-Hexo-目录" class="headerlink" title="步骤 1: 进入 Hexo 目录"></a>步骤 1: 进入 Hexo 目录</h2><p>首先，通过命令行进入你的 Hexo 项目目录。在这个目录下，你应该能看到 <code>scaffolds</code>、<code>source</code>、<code>themes</code> 等文件夹以及 <code>_config.yml</code> 和 <code>package.json</code> 文件。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo</span><br><span class="line">$ <span class="built_in">ls</span></span><br><span class="line"><span class="comment"># 应显示：scaffolds  source  themes  _config.yml  package.json</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="步骤-2-创建-footer-swig-文件"><a href="#步骤-2-创建-footer-swig-文件" class="headerlink" title="步骤 2: 创建 footer.swig 文件"></a>步骤 2: 创建 footer.swig 文件</h2><p>接下来，在 <code>hexo/source/_data</code> 目录下创建一个名为 <code>footer.swig</code> 的文件（如果 <code>_data</code> 目录不存在，请先创建它）。</p>
-<p>编辑 <code>footer.swig</code> 文件，并添加以下代码来引入 Canvas Nest 的几何动效脚本：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">color</span>=<span class="string">&quot;0,0,255&quot;</span> <span class="attr">opacity</span>=<span class="string">&quot;0.5&quot;</span> <span class="attr">zIndex</span>=<span class="string">&quot;-1&quot;</span> <span class="attr">count</span>=<span class="string">&quot;99&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>你可以根据自己的喜好调整 <code>color</code>（颜色）、<code>opacity</code>（透明度）、<code>zIndex</code>（层叠顺序）和 <code>count</code>（粒子数量）等参数。</p>
-<h2 id="步骤-3-配置-NexT-主题"><a href="#步骤-3-配置-NexT-主题" class="headerlink" title="步骤 3: 配置 NexT 主题"></a>步骤 3: 配置 NexT 主题</h2><p>最后，在 NexT 主题的 <code>_config.yml</code> 文件中，找到 <code>custom_file_path</code> 部分，并取消注释 <code>footer</code> 选项，以便 Hexo 能够加载你自定义的 <code>footer.swig</code> 文件。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 定义自定义文件路径</span></span><br><span class="line"><span class="comment"># 在站点目录 `source/_data` 中创建你的自定义文件，并取消注释下面需要的文件</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="attr">footer:</span> <span class="string">source/_data/footer.swig</span>  <span class="comment"># 取消注释此行</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="comment">#style: source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
-
-<p>完成以上步骤后，你的 Hexo 博客应该已经成功添加了 NexT Canvas Nest 的几何动效。如果你想要进一步优化或调整动效，可以回到 <code>footer.swig</code> 文件中修改相应的参数。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/13/%E5%90%8E%E6%B2%A1%E6%9C%89%E5%91%BD%E4%BB%A4%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Way-Kwok Chu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Way-Kwok Chu's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/13/%E5%90%8E%E6%B2%A1%E6%9C%89%E5%91%BD%E4%BB%A4%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">Arch Linux 安装 NVM 后没有命令问题解决方案</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2024-12-13 14:44:55 / 修改时间：14:50:17" itemprop="dateCreated datePublished" datetime="2024-12-13T14:44:55+08:00">2024-12-13</time>
-            </span>
-
-          
-            <span id="/2024/12/13/%E5%90%8E%E6%B2%A1%E6%9C%89%E5%91%BD%E4%BB%A4%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="post-meta-item leancloud_visitors" data-flag-title="Arch Linux 安装 NVM 后没有命令问题解决方案" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2024/12/13/%E5%90%8E%E6%B2%A1%E6%9C%89%E5%91%BD%E4%BB%A4%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2024/12/13/%E5%90%8E%E6%B2%A1%E6%9C%89%E5%91%BD%E4%BB%A4%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Arch-Linux-安装-NVM-后没有命令问题解决方案"><a href="#Arch-Linux-安装-NVM-后没有命令问题解决方案" class="headerlink" title="Arch Linux 安装 NVM 后没有命令问题解决方案"></a>Arch Linux 安装 NVM 后没有命令问题解决方案</h1><p>在 Arch Linux 系统中安装 <code>nvm</code> 后，可能会遇到 <code>nvm</code> 命令缺失的问题。这个问题是由于 <code>nvm</code> 的设计方式所导致的，需要手动启用它。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>根据 Arch Linux 仓库中 <code>nvm</code> 软件包的说明，您需要手动将 <code>nvm</code> 源代码加载到当前会话中。具体操作如下：</p>
-<h3 id="1-暂时启用-NVM："><a href="#1-暂时启用-NVM：" class="headerlink" title="1. 暂时启用 NVM："></a>1. 暂时启用 NVM：</h3><p>可以通过以下命令手动启用 <code>nvm</code>，该命令将加载 <code>nvm</code> 配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /usr/share/nvm/init-nvm.sh</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-长期启用-NVM："><a href="#2-长期启用-NVM：" class="headerlink" title="2. 长期启用 NVM："></a>2. 长期启用 NVM：</h3><p>为了在每次启动时自动启用 <code>nvm</code>，需要将此命令添加到您的 shell 启动文件中。如果您使用的是 <code>zsh</code>，则需要将命令添加到 <code>~/.zshrc</code> 文件中；如果您使用的是 <code>bash</code>，则将其添加到 <code>~/.bashrc</code> 文件中。</p>
-<p>对于 <code>zsh</code> 用户，执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;source /usr/share/nvm/init-nvm.sh&#x27;</span> &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
-
-<p>对于 <code>bash</code> 用户，执行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;source /usr/share/nvm/init-nvm.sh&#x27;</span> &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
-
-<p>这样配置后，<code>nvm</code> 就会在每次打开终端时自动加载，您就可以愉快地使用 <code>nvm</code> 来管理 Node.js 版本了。</p>
-<hr>
-<p>以上就是在 Arch Linux 中安装 <code>nvm</code> 后遇到命令缺失问题的解决方案。希望对您有所帮助！如果有任何疑问，欢迎留言或联系我。</p>
-<pre><code>
-</code></pre>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/10/%E5%A4%A7%E9%9B%B7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Way-Kwok Chu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Way-Kwok Chu's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2024/12/10/%E5%A4%A7%E9%9B%B7/" class="post-title-link" itemprop="url">Manjaro/Arch - 安装及设置 fcitx 输入法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2024-12-10 09:37:52" itemprop="dateCreated datePublished" datetime="2024-12-10T09:37:52+08:00">2024-12-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-12-13 15:20:31" itemprop="dateModified" datetime="2024-12-13T15:20:31+08:00">2024-12-13</time>
-              </span>
-
-          
-            <span id="/2024/12/10/%E5%A4%A7%E9%9B%B7/" class="post-meta-item leancloud_visitors" data-flag-title="Manjaro/Arch - 安装及设置 fcitx 输入法" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2024/12/10/%E5%A4%A7%E9%9B%B7/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2024/12/10/%E5%A4%A7%E9%9B%B7/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<p>在 Arch Linux 或 Manjaro 上，默认是没有安装输入法的，需要手动安装。通常使用 fcitx 作为输入法框架。</p>
-<h2 id="1-安装-fcitx"><a href="#1-安装-fcitx" class="headerlink" title="1. 安装 fcitx"></a>1. 安装 fcitx</h2><p>首先，安装 fcitx 输入法框架及配置工具，方便后续设置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S fcitx-im fcitx-configtool</span><br></pre></td></tr></table></figure>
-
-<p>这样不仅安装了 fcitx 输入法框架，还安装了图形化配置工具，可以更加方便地设置输入法。</p>
-<h2 id="2-启动-fcitx"><a href="#2-启动-fcitx" class="headerlink" title="2. 启动 fcitx"></a>2. 启动 fcitx</h2><p>安装完成后，系统会自动在 <code>/etc/xdg/autostart/fcitx-autostart.desktop</code> 创建一个启动快捷方式，重启时会自动加载。如果你希望立即启动 fcitx，可以运行以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fcitx &amp;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-配置工具"><a href="#3-配置工具" class="headerlink" title="3. 配置工具"></a>3. 配置工具</h2><p>启动输入法后，可以在系统托盘中右键点击 fcitx 图标，选择“配置”，即可进入输入法配置界面，通过图形化界面选择和管理输入法。</p>
-<h2 id="4-设置环境变量"><a href="#4-设置环境变量" class="headerlink" title="4. 设置环境变量"></a>4. 设置环境变量</h2><p>为了让桌面环境加载输入法，我们需要设置一些环境变量。你可以选择将这些变量添加到 <code>/etc/profile</code>（全局配置）或者用户本地环境文件 <code>~/.pam_environment</code> 中。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GTK_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> QT_IM_MODULE=fcitx</span><br><span class="line"><span class="built_in">export</span> XMODIFIERS=@im=fcitx</span><br></pre></td></tr></table></figure>
-
-<p>这三个环境变量告诉桌面环境使用 fcitx 作为输入法框架。</p>
-<h2 id="5-扩展输入法"><a href="#5-扩展输入法" class="headerlink" title="5. 扩展输入法"></a>5. 扩展输入法</h2><p>fcitx 自带拼音输入法，但你也可以安装其他输入法以丰富选择，例如谷歌拼音、搜狗拼音、RIME 等。</p>
-<h3 id="谷歌拼音"><a href="#谷歌拼音" class="headerlink" title="谷歌拼音"></a>谷歌拼音</h3><p>谷歌拼音比较稳定，尽管词汇量有时不完全：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S fcitx-googlepinyin</span><br></pre></td></tr></table></figure>
-
-<h3 id="搜狗拼音"><a href="#搜狗拼音" class="headerlink" title="搜狗拼音"></a>搜狗拼音</h3><p>搜狗拼音需要一些额外的依赖，虽然不如谷歌拼音稳定，但也有很多用户使用。你可以在 Arch Linux CN 源中直接安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S fcitx-sogoupinyin</span><br></pre></td></tr></table></figure>
-
-<h3 id="RIME（中州韵输入法）"><a href="#RIME（中州韵输入法）" class="headerlink" title="RIME（中州韵输入法）"></a>RIME（中州韵输入法）</h3><p>RIME 是传说中的神级输入法，适合需要更高自定义的用户。你可以通过以下命令安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> pacman -S fcitx-rime</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-可能出现的问题"><a href="#6-可能出现的问题" class="headerlink" title="6. 可能出现的问题"></a>6. 可能出现的问题</h2><p>有时候，在使用 GNOME Terminal 时，按 <code>Ctrl + Space</code> 可能无法调出输入法。遇到此问题，可以通过以下命令修复：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gsettings <span class="built_in">set</span> org.gnome.settings-daemon.plugins.xsettings overrides <span class="string">&quot;&#123;&#x27;Gtk/IMModule&#x27;:&lt;&#x27;fcitx&#x27;&gt;&#125;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>但是，在 GNOME Shell 3.32.2 版本中，我并没有遇到此问题。如果你使用的是 3.16 版本，可能会遇到这个问题。</p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上是 Manjaro 或 Arch Linux 上安装和配置 fcitx 输入法的完整教程。如果你有其他问题或需要更多帮助，欢迎留言！</p>
-<hr>
-<p><img src="/images/input.png" alt="大雷"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1080,6 +561,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E9%A1%BB%E7%9F%A5"><span class="nav-number">1.</span> <span class="nav-text">安装须知</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E5%BC%80%E5%A7%8B-Arch-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">正式开始 Arch 安装教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F%E4%B8%8B%E8%BD%BD"><span class="nav-number">3.</span> <span class="nav-text">系统镜像下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%83%A7%E5%BD%95%E9%95%9C%E5%83%8F%E5%88%B0-U-%E7%9B%98"><span class="nav-number">4.</span> <span class="nav-text">烧录镜像到 U 盘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-%E7%94%A8%E6%88%B7"><span class="nav-number">4.1.</span> <span class="nav-text">Windows 用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E5%88%B0-Live-%E7%8E%AF%E5%A2%83"><span class="nav-number">5.</span> <span class="nav-text">启动到 Live 环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%87%86%E5%A4%87%E5%8F%8C%E7%B3%BB%E7%BB%9F%E7%A9%BA%E9%97%B4"><span class="nav-number">5.1.</span> <span class="nav-text">1. 准备双系统空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%B3%E9%97%AD%E5%AE%89%E5%85%A8%E5%90%AF%E5%8A%A8"><span class="nav-number">5.2.</span> <span class="nav-text">2. 关闭安全启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%BC%95%E5%AF%BC%E8%BF%9B%E5%85%A5-Live-%E7%8E%AF%E5%A2%83"><span class="nav-number">5.3.</span> <span class="nav-text">3. 引导进入 Live 环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">6.</span> <span class="nav-text">终端基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="nav-number">7.</span> <span class="nav-text">正式安装步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%A3%80%E6%9F%A5-UEFI-%E6%A8%A1%E5%BC%8F"><span class="nav-number">7.1.</span> <span class="nav-text">1. 检查 UEFI 模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C"><span class="nav-number">7.2.</span> <span class="nav-text">2. 配置网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%9B%B4%E6%96%B0%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4"><span class="nav-number">7.3.</span> <span class="nav-text">3. 更新系统时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90"><span class="nav-number">7.4.</span> <span class="nav-text">4. 更换镜像源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%88%86%E5%8C%BA"><span class="nav-number">7.5.</span> <span class="nav-text">5. 分区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E5%88%86%E5%8C%BA%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="nav-number">7.5.1.</span> <span class="nav-text">推荐分区方案：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%88%86%E5%8C%BA"><span class="nav-number">7.6.</span> <span class="nav-text">6. 格式化分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E6%8C%82%E8%BD%BD%E5%88%86%E5%8C%BA"><span class="nav-number">7.7.</span> <span class="nav-text">7. 挂载分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="nav-number">7.8.</span> <span class="nav-text">8. 安装系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-%E7%94%9F%E6%88%90-fstab-%E6%96%87%E4%BB%B6"><span class="nav-number">7.9.</span> <span class="nav-text">9. 生成 fstab 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE"><span class="nav-number">7.10.</span> <span class="nav-text">10. 进入系统进行配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%A9%E4%BD%99%E9%85%8D%E7%BD%AE"><span class="nav-number">8.</span> <span class="nav-text">剩余配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E9%85%8D%E7%BD%AE%E6%97%B6%E5%8C%BA"><span class="nav-number">9.</span> <span class="nav-text">11. 配置时区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0%E5%8C%96"><span class="nav-number">10.</span> <span class="nav-text">12. 配置本地化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-%E9%85%8D%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%90%8D%E5%92%8C%E7%BD%91%E7%BB%9C"><span class="nav-number">11.</span> <span class="nav-text">13. 配置主机名和网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-%E8%AE%BE%E7%BD%AE-root-%E5%AF%86%E7%A0%81"><span class="nav-number">12.</span> <span class="nav-text">14. 设置 root 密码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-%E5%88%9B%E5%BB%BA%E6%99%AE%E9%80%9A%E7%94%A8%E6%88%B7"><span class="nav-number">13.</span> <span class="nav-text">15. 创建普通用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-%E5%AE%89%E8%A3%85%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E5%99%A8"><span class="nav-number">14.</span> <span class="nav-text">16. 安装引导加载器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#16-1-%E5%AE%89%E8%A3%85-GRUB"><span class="nav-number">14.1.</span> <span class="nav-text">16.1 安装 GRUB</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-%E9%87%8D%E5%90%AF%E7%B3%BB%E7%BB%9F"><span class="nav-number">15.</span> <span class="nav-text">17. 重启系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F"><span class="nav-number">16.</span> <span class="nav-text">18. 进入系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="nav-number">17.</span> <span class="nav-text">19. 网络配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-%E5%AE%89%E8%A3%85%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="nav-number">18.</span> <span class="nav-text">20. 安装桌面环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-GNOME-%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="nav-number">18.1.</span> <span class="nav-text">安装 GNOME 桌面环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-KDE-Plasma-%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83"><span class="nav-number">18.2.</span> <span class="nav-text">安装 KDE Plasma 桌面环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21-%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96%E4%B8%8E%E5%90%8E%E7%BB%AD%E9%85%8D%E7%BD%AE"><span class="nav-number">19.</span> <span class="nav-text">21. 系统优化与后续配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">20.</span> <span class="nav-text">结语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">21.</span> <span class="nav-text">参考资料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#22-2-%E9%AA%8C%E8%AF%81%E5%AD%97%E4%BD%93"><span class="nav-number">21.1.</span> <span class="nav-text">22.2 验证字体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#23-%E7%BE%8E%E5%8C%96%E7%B3%BB%E7%BB%9F%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="nav-number">22.</span> <span class="nav-text">23. 美化系统（可选）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#23-1-%E5%AE%89%E8%A3%85-GTK-%E5%92%8C%E5%9B%BE%E6%A0%87%E4%B8%BB%E9%A2%98"><span class="nav-number">22.1.</span> <span class="nav-text">23.1 安装 GTK 和图标主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#24-%E8%BE%93%E5%85%A5%E6%B3%95%E9%85%8D%E7%BD%AE"><span class="nav-number">23.</span> <span class="nav-text">24. 输入法配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#24-1-%E5%AE%89%E8%A3%85-Fcitx5-%E5%92%8C%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81"><span class="nav-number">23.1.</span> <span class="nav-text">24.1 安装 Fcitx5 和中文支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-2-%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">23.2.</span> <span class="nav-text">24.2 配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-3-%E5%90%AF%E5%8A%A8-fcitx5"><span class="nav-number">23.3.</span> <span class="nav-text">24.3 启动 fcitx5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#25-%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="nav-number">24.</span> <span class="nav-text">25. 系统基本安全配置（可选）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#26-%E6%80%BB%E7%BB%93"><span class="nav-number">25.</span> <span class="nav-text">26. 总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99-1"><span class="nav-number">26.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
