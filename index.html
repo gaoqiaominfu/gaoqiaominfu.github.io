@@ -147,6 +147,142 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/04/22/Linux%E8%AE%BF%E9%97%AEWindows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AE%BE%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Way-Kwok Chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Way-Kwok Chu's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2025/04/22/Linux%E8%AE%BF%E9%97%AEWindows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">Linux 访问 Windows 共享文件夹设置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2025-04-22 00:00:00 / 修改时间：14:13:17" itemprop="dateCreated datePublished" datetime="2025-04-22T00:00:00+08:00">2025-04-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">网络配置</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2025/04/22/Linux%E8%AE%BF%E9%97%AEWindows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AE%BE%E7%BD%AE/" class="post-meta-item leancloud_visitors" data-flag-title="Linux 访问 Windows 共享文件夹设置" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2025/04/22/Linux%E8%AE%BF%E9%97%AEWindows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AE%BE%E7%BD%AE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2025/04/22/Linux%E8%AE%BF%E9%97%AEWindows%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E8%AE%BE%E7%BD%AE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Linux-访问-Windows-共享文件夹设置"><a href="#Linux-访问-Windows-共享文件夹设置" class="headerlink" title="Linux 访问 Windows 共享文件夹设置"></a>Linux 访问 Windows 共享文件夹设置</h1><h2 id="1-新建共享文件夹"><a href="#1-新建共享文件夹" class="headerlink" title="1. 新建共享文件夹"></a>1. 新建共享文件夹</h2><p>在 Linux 系统中，首先需要在当前用户的主目录或有写权限的目录下创建一个共享文件夹，作为共享文件的挂载点。例如，可以在主目录下新建文件夹 <code>lyman_share</code>。创建并进入该文件夹后，使用 <code>pwd</code> 命令查看其绝对路径。该路径将作为挂载点。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/lyman_share</span><br><span class="line"><span class="built_in">cd</span> ~/lyman_share</span><br><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+
+<p>输出示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/username/lyman_share</span><br></pre></td></tr></table></figure>
+
+<p>该路径就是挂载点，稍后将用于挂载 Windows 共享文件夹。</p>
+<h2 id="2-安装-CIFS-SMB-软件包"><a href="#2-安装-CIFS-SMB-软件包" class="headerlink" title="2. 安装 CIFS&#x2F;SMB 软件包"></a>2. 安装 CIFS&#x2F;SMB 软件包</h2><p>要使 Linux 系统能够访问 Windows 共享的文件夹，需要安装 CIFS&#x2F;SMB 协议支持的软件。执行以下命令安装 <code>samba-client</code> 和 <code>cifs-utils</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install smbclient cifs-utils</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>samba-client</code>：提供 Linux 系统作为 SMB 客户端的功能。</li>
+<li><code>cifs-utils</code>：使 Linux 支持 CIFS 协议的网络文件系统。</li>
+</ul>
+<h2 id="3-挂载-Windows-共享文件夹"><a href="#3-挂载-Windows-共享文件夹" class="headerlink" title="3. 挂载 Windows 共享文件夹"></a>3. 挂载 Windows 共享文件夹</h2><p>安装完所需软件后，可以使用以下命令将 Windows 共享文件夹挂载到 Linux 系统上。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> mount -t cifs -o user=共享主机用户名,password=共享主机用户密码,gid=linux用户组<span class="built_in">id</span>,uid=linux用户<span class="built_in">id</span> //共享主机的IP地址/windows共享文件夹 /linux挂载点</span><br></pre></td></tr></table></figure>
+
+<h3 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h3><p>假设：</p>
+<ul>
+<li>Windows 共享文件夹名称：<code>share_folder</code></li>
+<li>Windows 主机 IP 地址：<code>192.168.1.100</code></li>
+<li>Linux 用户组 ID：<code>1000</code></li>
+<li>Linux 用户 ID：<code>1000</code></li>
+<li>Windows 用户名：<code>user_win</code></li>
+<li>Windows 用户密码：<code>password_win</code></li>
+<li>挂载点：<code>/home/username/lyman_share</code></li>
+</ul>
+<p>那么，挂载命令应为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> mount -t cifs -o user=user_win,password=password_win,gid=1000,uid=1000 //192.168.1.100/share_folder /home/username/lyman_share</span><br></pre></td></tr></table></figure>
+
+<p>执行该命令后，Windows 共享文件夹将成功挂载到 Linux 系统的 <code>/home/username/lyman_share</code> 目录中。此时，Linux 系统就可以通过该目录访问 Windows 共享的文件。</p>
+<h2 id="4-持久化挂载（可选）"><a href="#4-持久化挂载（可选）" class="headerlink" title="4. 持久化挂载（可选）"></a>4. 持久化挂载（可选）</h2><p>如果希望每次启动 Linux 时自动挂载 Windows 共享文件夹，可以将挂载配置添加到 <code>/etc/fstab</code> 文件中。打开该文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/fstab</span><br></pre></td></tr></table></figure>
+
+<p>在文件末尾添加以下一行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//192.168.1.100/share_folder /home/username/lyman_share cifs user=user_win,password=password_win,gid=1000,uid=1000 0 0</span><br></pre></td></tr></table></figure>
+
+<p>保存并退出后，系统将会在每次启动时自动挂载该共享文件夹。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过以上步骤，您可以成功地将 Windows 共享文件夹挂载到 Linux 系统上，方便地共享和管理文件。希望本教程对您有所帮助。如有任何问题，请随时留言。</p>
+<hr>
+<p><strong>温馨提示：</strong></p>
+<ul>
+<li>确保 Windows 防火墙已设置允许 SMB&#x2F;CIFS 协议的访问。</li>
+<li>如果遇到挂载权限问题，可以尝试检查共享文件夹的权限设置，确保 Linux 系统的用户有足够的访问权限。</li>
+</ul>
+<pre><code>
+</code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/12/17/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1093,9 +1229,17 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
